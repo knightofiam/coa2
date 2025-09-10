@@ -11,15 +11,11 @@ namespace com.forerunnergames.coa.player;
 
 public partial class PlayerBody : CharacterBody2D
 {
-  [Export] public PlayerHand LeftHand = null!;
-  [Export] public PlayerHand RightHand = null!;
-  [Export] public NodePath AnchorPath = null!;
   [Export] public PlayerAnimator Animator = null!;
-  [Export] public float WalkSpeed = 100.0f;
-  [Export] public float RunSpeed = 300.0f;
+  [Export] public float WalkSpeed = 120.0f;
+  [Export] public float RunSpeed = 350.0f;
   [Export] public float Acceleration = 2000.0f;
-  [Export] public float JumpVelocity = -400.0f;
-  public bool IsFollowing { get; set; }
+  [Export] public float JumpVelocity = -850.0f;
   private static readonly Logger Log = LogManager.GetCurrentClassLogger();
   private Game _game = null!;
   private Timer _iceTimer = null!; // Forces a short fall after slipping on ice, before being allowed to climb again.
@@ -36,18 +32,15 @@ public partial class PlayerBody : CharacterBody2D
     _game = GetNode <Game> ("/root/Game");
     _collider = GetNode <CollisionShape2D> ("CollisionShape2D");
     _iceTimer = GetNode <Timer> ("IceTimer");
-    _anchor = GetNode <RigidBody2D> (AnchorPath);
     for (var i = 1; i <= 4; ++i) _rays.Add (GetNode <RayCast2D> ("RayCast2D" + i));
   }
 
   public override void _PhysicsProcess (double delta)
   {
-    if (CheckFollowing()) return; // Allow the anchor to lead with physics.
     var velocity = Velocity;
     var inputDirection = Input.GetVector ("move_left", "move_right", "move_up", "move_down");
     var jumpInput = Input.IsActionJustPressed ("jump");
     var speedBoostInput = Input.IsActionPressed ("speed_boost");
-    var isIceTimerStopped = _iceTimer.IsStopped();
     var isOnFloor = IsOnFloor();
     var landed = !_wasOnFloor && isOnFloor;
     var startJumping = jumpInput && isOnFloor;
@@ -55,14 +48,10 @@ public partial class PlayerBody : CharacterBody2D
     var horizontalSpeed = inputDirection.X * (speedBoostInput ? RunSpeed : WalkSpeed);
     var horizontalVelocity = Mathf.MoveToward (velocity.X, horizontalSpeed, Acceleration * (float)delta);
     velocity.X = horizontalVelocity;
-    velocity.Y += fallVelocity;
+    velocity.Y += fallVelocity * 2.0f;
     velocity.Y = startJumping ? JumpVelocity : velocity.Y;
-    LeftHand.IsBodyOnFloor = isOnFloor;
-    RightHand.IsBodyOnFloor = isOnFloor;
-    LeftHand.IsIceTimerStopped = isIceTimerStopped;
-    RightHand.IsIceTimerStopped = isIceTimerStopped;
     Velocity = velocity;
-    Animator.UpdateFromCharacterBody (Velocity, inputDirection.X, speedBoostInput, isOnFloor, landed, startJumping);
+    Animator.Update (Velocity, inputDirection.X, speedBoostInput, isOnFloor, landed, startJumping);
     _game.SetDebugText ($"Velocity: ({Velocity.X:F1}, {Velocity.Y:F1}), IsOnFloor: {isOnFloor}, Animation: {Animator.CurrentAnimation}");
     _wasOnFloor = isOnFloor;
     _previousVelocity = Velocity;
@@ -93,19 +82,6 @@ public partial class PlayerBody : CharacterBody2D
     _iceCollisions = _rays.Count (r => Tools.GetTerrain (r) == "Icy Cliff");
     if (_iceCollisions == 0 || !_iceTimer.IsStopped()) return;
     _iceTimer.Start();
-  }
-
-  private bool CheckFollowing()
-  {
-    if (!IsFollowing) return false;
-    Follow();
-    return true;
-  }
-
-  private void Follow()
-  {
-    GlobalTransform = _anchor.GlobalTransform;
-    Velocity = Vector2.Zero;
   }
 
   public bool IsTouchingIce()

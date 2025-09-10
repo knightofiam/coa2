@@ -3,48 +3,53 @@
 [ext_resource type="Script" uid="uid://ctg5lbtdtwtg" path="res://Scripts/Player/PlayerBody.cs" id="1_jtg1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7afp"]
-size = Vector2(40, 70)
+size = Vector2(8, 14)
 
 [node name="PlayerBody" type="CharacterBody2D"]
-collision_mask = 6
+collision_mask = 38
 slide_on_ceiling = false
 script = ExtResource("1_jtg1l")
-WalkSpeed = 50.0
+WalkSpeed = 150.0
+JumpVelocity = -810.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+visible = false
+position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_h7afp")
 
 [node name="RayCast2D1" type="RayCast2D" parent="."]
+visible = false
 rotation = 1.5708
-target_position = Vector2(7.60198e-05, 21)
-collision_mask = 8
+target_position = Vector2(4.705987e-05, 13)
+collision_mask = 0
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
+visible = false
 rotation = -1.5708
-target_position = Vector2(-7.60198e-05, 21)
-collision_mask = 8
+target_position = Vector2(-4.705987e-05, 13)
+collision_mask = 0
 
 [node name="RayCast2D3" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 rotation = 1.5708
-target_position = Vector2(-36, 0.00013032)
-collision_mask = 8
+target_position = Vector2(-14, 5.067986e-05)
+collision_mask = 0
 
 [node name="RayCast2D4" type="RayCast2D" parent="."]
+visible = false
 rotation = -1.5708
-target_position = Vector2(-37, -0.00013394)
-collision_mask = 8
+target_position = Vector2(-17, -6.153983e-05)
+collision_mask = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -100)
-zoom = Vector2(2, 2)
+offset = Vector2(0, -235)
+limit_left = -800
 position_smoothing_speed = 20.0
 rotation_smoothing_speed = 100.0
 drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.3
-drag_right_margin = 0.3
+drag_top_margin = 0.25
+drag_bottom_margin = 0.59
 
 [node name="IceTimer" type="Timer" parent="."]
 process_callback = 0
