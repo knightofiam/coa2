@@ -23,13 +23,13 @@ shape = SubResource("RectangleShape2D_ude3g")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
 [node name="LeftHandPinJoint" type="PinJoint2D" parent="."]
-position = Vector2(-7, -13)
+position = Vector2(-24, -41.6)
 node_a = NodePath("..")
 bias = 0.1
 softness = 0.06
 
 [node name="RightHandPinJoint" type="PinJoint2D" parent="."]
-position = Vector2(11, -14)
+position = Vector2(24, -41.6)
 node_a = NodePath("..")
 bias = 0.1
 softness = 0.06

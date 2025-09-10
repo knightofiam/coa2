@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cbayaomyv7jko" path="res://Scripts/Player/Player.cs" id="1_x601d"]
 [ext_resource type="PackedScene" uid="uid://b4pknbk3nohjh" path="res://Scenes/Player/PlayerBody.tscn" id="2_dewec"]
-[ext_resource type="PackedScene" uid="uid://b8bddk6epakt4" path="res://Scenes/Player/PlayerAnimator.tscn" id="2_jmcll"]
+[ext_resource type="PackedScene" uid="uid://dpou1aajk4btf" path="res://Scenes/Player/PlayerAnimator.tscn" id="2_jmcll"]
 [ext_resource type="PackedScene" uid="uid://cn6o87qfhtt23" path="res://Scenes/Player/PlayerBodyAnchor.tscn" id="3_ude3g"]
 [ext_resource type="PackedScene" uid="uid://dhafhai8evdhc" path="res://Scenes/Player/PlayerHand.tscn" id="6_4wape"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_x601d")
-GrabUpOffset = Vector2(0, -20)
-GrabDownOffset = Vector2(0, 3)
 
 [node name="PlayerAnimator" parent="." instance=ExtResource("2_jmcll")]
 DefaultFollowTargetPath = NodePath("../PlayerBody")
@@ -29,16 +27,16 @@ Animator = NodePath("../PlayerAnimator")
 
 [node name="PlayerLeftHand" parent="." instance=ExtResource("6_4wape")]
 visible = false
-position = Vector2(-7, -19)
-scale = Vector2(0.25, 0.25)
+modulate = Color(1, 1, 1, 0.466667)
+position = Vector2(-24, -48)
 mass = 0.45
 linear_damp = 0.0
 angular_damp = 0.0
 
 [node name="PlayerRightHand" parent="." instance=ExtResource("6_4wape")]
 visible = false
-position = Vector2(11, -20)
-scale = Vector2(0.25, 0.25)
+modulate = Color(1, 1, 1, 0.466667)
+position = Vector2(24, -48)
 mass = 0.45
 linear_damp = 0.0
 angular_damp = 0.0

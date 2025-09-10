@@ -102,6 +102,7 @@ public partial class Player : Node2D
     _characterBody.IsFollowing = true; // Character follows anchor.
     _characterBody.SetBodyCollisionEnabled (false); // avoid double-collisions with world
     _animator.SetFollowTarget (_bodyAnchor);
+    _animator.ResetVisualOffset();
   }
 
   // Reset character rotation & velocity, & set the CharacterBody2D to lead while the anchor body follows.
@@ -114,6 +115,7 @@ public partial class Player : Node2D
     _characterBody.IsFollowing = false;
     _characterBody.SetBodyCollisionEnabled (true);
     _animator.SetFollowTarget (_characterBody);
+    _animator.ResetVisualOffset();
   }
 
   private void ReleaseAllGrabs()

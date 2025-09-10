@@ -1,8 +1,9 @@
-[gd_scene load_steps=70 format=3 uid="uid://b8bddk6epakt4"]
+[gd_scene load_steps=75 format=3 uid="uid://dpou1aajk4btf"]
 
 [ext_resource type="Script" uid="uid://bxkjady2qws2w" path="res://Scripts/Player/PlayerAnimator.cs" id="1_2obx7"]
 [ext_resource type="Texture2D" uid="uid://ogd6gfqug8xc" path="res://Assets/Images/Player/2D-Pixel-Art-Character-Template/Climb (facing back of player)/player climb-back 48x48.png" id="2_4qm45"]
 [ext_resource type="Texture2D" uid="uid://b7emomhdfrto6" path="res://Assets/Images/Player/2D-Pixel-Art-Character-Template/Death/Player Death 64x64.png" id="3_r506a"]
+[ext_resource type="Texture2D" uid="uid://bdrf7adqvvblg" path="res://Assets/Images/Player/2D-Pixel-Art-Character-Template/Hang (facing back of player)/player hang-back 48x48.png" id="4_4qm45"]
 [ext_resource type="Texture2D" uid="uid://ci4uwsfmipk40" path="res://Assets/Images/Player/2D-Pixel-Art-Character-Template/Hurt-Damaged/Player Hurt 48x48.png" id="4_kdkvc"]
 [ext_resource type="Texture2D" uid="uid://bj8l8l1daysjn" path="res://Assets/Images/Player/2D-Pixel-Art-Character-Template/Idle/Player Idle 48x48.png" id="5_2mrue"]
 [ext_resource type="Texture2D" uid="uid://bw105winciavj" path="res://Assets/Images/Player/2D-Pixel-Art-Character-Template/Jump/player jump left 48x48-sheet.png" id="6_ccgu8"]
@@ -65,6 +66,22 @@ region = Rect2(384, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_80tqh"]
 atlas = ExtResource("3_r506a")
 region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r506a"]
+atlas = ExtResource("4_4qm45")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdkvc"]
+atlas = ExtResource("4_4qm45")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mrue"]
+atlas = ExtResource("4_4qm45")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccgu8"]
+atlas = ExtResource("4_4qm45")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6but"]
 atlas = ExtResource("4_kdkvc")
@@ -302,6 +319,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_r506a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdkvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mrue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccgu8")
+}],
+"loop": true,
+"name": &"hang",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_b6but")
 }, {
 "duration": 1.0,
@@ -467,13 +501,21 @@ animations = [{
 }]
 
 [node name="PlayerAnimator" type="Node2D" node_paths=PackedStringArray("Sprite")]
+scale = Vector2(2, 2)
 script = ExtResource("1_2obx7")
 Sprite = NodePath("AnimatedSprite2D")
+ClimbLeftSocketByFrame = Array[Vector2]([Vector2(-6, -3), Vector2(-6, -12), Vector2(-5, -10), Vector2(-5, -10)])
+ClimbRightSocketByFrame = Array[Vector2]([Vector2(4, -10.5), Vector2(4, -10), Vector2(5, -3), Vector2(5, -13)])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1e6p3")
-animation = &"climb"
-offset = Vector2(1, 0)
+animation = &"idle"
+frame_progress = 0.159228
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="LeftHandSocket" type="Marker2D" parent="."]
+position = Vector2(-5, -10)
+
+[node name="RightHandSocket" type="Marker2D" parent="."]
+position = Vector2(5, -13)

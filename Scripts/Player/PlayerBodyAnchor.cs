@@ -84,6 +84,7 @@ public partial class PlayerBodyAnchor : RigidBody2D
     var isLeftHandHigher = leftHandHeight + HandHeightDeadZone < rightHandHeight;
     var isRightHandHigher = rightHandHeight + HandHeightDeadZone < leftHandHeight;
     var frameIndex = isLeftHandHigher ? 2 : isRightHandHigher ? 0 : 1;
+    Animator.AlignSpriteToHands (LeftHand.GlobalPosition, RightHand.GlobalPosition);
     Animator.UpdateFromBodyAnchor (frameIndex);
   }
 }
