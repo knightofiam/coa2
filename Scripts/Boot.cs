@@ -2,6 +2,7 @@ using com.forerunnergames.coa.utilities;
 using com.forerunnergames.coa.utilities.logging;
 using Godot;
 using NLog;
+using Logger = NLog.Logger;
 
 namespace com.forerunnergames.coa.boot;
 

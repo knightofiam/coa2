@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Cliffs of Akaia 2"
 run/main_scene="uid://b4y226ci36yia"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,8 +21,9 @@ Game="*res://Scenes/Game.tscn"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1024
+window/size/viewport_height=768
+window/stretch/mode="viewport"
 window/dpi/allow_hidpi=false
 
 [dotnet]
@@ -111,6 +112,8 @@ grab_down_right={
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Cliffs"
 2d_physics/layer_4="Ice"
+2d_physics/layer_5="Signs"
+2d_physics/layer_6="Walls"
 
 [physics]
 
@@ -119,4 +122,8 @@ common/physics_ticks_per_second=120
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0

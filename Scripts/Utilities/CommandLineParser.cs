@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using Godot;
 using NLog;
+using Logger = NLog.Logger;
 
 namespace com.forerunnergames.coa.utilities;
 

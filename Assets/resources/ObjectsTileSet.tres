@@ -1,0 +1,48 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dlc6275iw5pus"]
+
+[ext_resource type="Texture2D" uid="uid://bdj3rkrjj1jb4" path="res://Assets/tilesets/cliffs.png" id="1_2yt2q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7lihs"]
+rough = true
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bf53h"]
+rough = true
+absorbent = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dahhg"]
+texture = ExtResource("1_2yt2q")
+texture_region_size = Vector2i(8, 8)
+0:10/size_in_atlas = Vector2i(2, 2)
+0:10/0 = 0
+2:10/size_in_atlas = Vector2i(2, 2)
+2:10/0 = 0
+4:10/size_in_atlas = Vector2i(2, 2)
+4:10/0 = 0
+4:10/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -4, -4, -8, -2, -8, -2, -6, 7, -6, 8, -5)
+4:10/0/physics_layer_2/polygon_0/one_way = true
+6:12/size_in_atlas = Vector2i(4, 4)
+6:12/0 = 0
+10:12/size_in_atlas = Vector2i(4, 4)
+10:12/0 = 0
+0:12/size_in_atlas = Vector2i(2, 2)
+0:12/0 = 0
+2:12/size_in_atlas = Vector2i(2, 2)
+2:12/0 = 0
+4:12/size_in_atlas = Vector2i(2, 2)
+4:12/0 = 0
+
+[resource]
+tile_size = Vector2i(4, 4)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 4
+physics_layer_1/physics_material = SubResource("PhysicsMaterial_7lihs")
+physics_layer_2/collision_layer = 16
+physics_layer_2/physics_material = SubResource("PhysicsMaterial_bf53h")
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Icy Cliff"
+terrain_set_0/terrain_0/color = Color(0.592157, 0.74902, 0.988235, 1)
+terrain_set_0/terrain_1/name = "Cliff"
+terrain_set_0/terrain_1/color = Color(0.439216, 0.439216, 0.439216, 1)
+sources/0 = SubResource("TileSetAtlasSource_dahhg")
