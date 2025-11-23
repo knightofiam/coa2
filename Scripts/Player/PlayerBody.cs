@@ -5,6 +5,7 @@ using com.forerunnergames.coa.settings;
 using com.forerunnergames.coa.utilities;
 using Godot;
 using NLog;
+using Logger = NLog.Logger;
 
 namespace com.forerunnergames.coa.player;
 

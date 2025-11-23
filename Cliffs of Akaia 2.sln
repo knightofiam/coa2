@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffs of Akaia 2", "Cliffs of Akaia 2.csproj", "{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffs of Akaia 2", "Cliffs of Akaia 2.csproj", "{937548CA-7B6F-4DE8-AADC-6C110150AA37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{4DEC0FD4-4861-4DB8-80DE-75B550F1EC0D}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{937548CA-7B6F-4DE8-AADC-6C110150AA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937548CA-7B6F-4DE8-AADC-6C110150AA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937548CA-7B6F-4DE8-AADC-6C110150AA37}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{937548CA-7B6F-4DE8-AADC-6C110150AA37}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{937548CA-7B6F-4DE8-AADC-6C110150AA37}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{937548CA-7B6F-4DE8-AADC-6C110150AA37}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

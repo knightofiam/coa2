@@ -3,6 +3,7 @@ using com.forerunnergames.coa.ui;
 using com.forerunnergames.coa.utilities;
 using Godot;
 using NLog;
+using Logger = NLog.Logger;
 
 namespace com.forerunnergames.coa.game;
 

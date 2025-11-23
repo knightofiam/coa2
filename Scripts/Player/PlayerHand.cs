@@ -1,6 +1,7 @@
 using com.forerunnergames.coa.game;
 using Godot;
 using NLog;
+using Logger = NLog.Logger;
 
 namespace com.forerunnergames.coa.player;
 
