@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbinnn4x6lfvq"
-path="res://.godot/imported/hand-left.png-a4a81f0fdd3f183b16b2181e7ebd0a02.ctex"
+path="res://.godot/imported/hand-left.png-eee4790a708695211b8c5320dc39f676.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/hand-left.png"
-dest_files=["res://.godot/imported/hand-left.png-a4a81f0fdd3f183b16b2181e7ebd0a02.ctex"]
+source_file="res://assets/textures/klas/hand-left.png"
+dest_files=["res://.godot/imported/hand-left.png-eee4790a708695211b8c5320dc39f676.ctex"]
 
 [params]
 

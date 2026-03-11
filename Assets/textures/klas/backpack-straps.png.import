@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://j1mn5vrerl0i"
-path="res://.godot/imported/backpack-straps.png-734d502606115774d768a8ef5a90f7c5.ctex"
+path="res://.godot/imported/backpack-straps.png-56ca0f578b5cf535e91e54f6d607a6a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/backpack-straps.png"
-dest_files=["res://.godot/imported/backpack-straps.png-734d502606115774d768a8ef5a90f7c5.ctex"]
+source_file="res://assets/textures/klas/backpack-straps.png"
+dest_files=["res://.godot/imported/backpack-straps.png-56ca0f578b5cf535e91e54f6d607a6a1.ctex"]
 
 [params]
 

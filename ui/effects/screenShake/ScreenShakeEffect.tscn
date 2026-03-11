@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clo2i3bp48x35"]
+
+[ext_resource type="Script" uid="uid://cc08q3uwv53pg" path="res://ui/effects/screenShake/ScreenShakeEffect.cs" id="1_5m8n2"]
+
+[node name="ScreenShakeEffect" type="Node" unique_id=1395471475]
+script = ExtResource("1_5m8n2")

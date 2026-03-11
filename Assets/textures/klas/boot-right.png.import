@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nw4r05kcgaip"
-path="res://.godot/imported/boot-right.png-bcb5cdde33dcdea7392a0d37b3a9bbcf.ctex"
+path="res://.godot/imported/boot-right.png-d1aef1308495693f1eb8fffa93d18ca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/boot-right.png"
-dest_files=["res://.godot/imported/boot-right.png-bcb5cdde33dcdea7392a0d37b3a9bbcf.ctex"]
+source_file="res://assets/textures/klas/boot-right.png"
+dest_files=["res://.godot/imported/boot-right.png-d1aef1308495693f1eb8fffa93d18ca3.ctex"]
 
 [params]
 

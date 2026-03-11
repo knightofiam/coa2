@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b1k4naeordxhj"]
+
+[ext_resource type="Script" uid="uid://b1twiby1cqx3b" path="res://ui/screens/manager/ScreenManager.cs" id="1_wc66e"]
+[ext_resource type="PackedScene" uid="uid://da7axh7s1qsu8" path="res://ui/effects/screenFade/ScreenFade.tscn" id="2_78wkq"]
+[ext_resource type="PackedScene" uid="uid://clo2i3bp48x35" path="res://ui/effects/screenShake/ScreenShakeEffect.tscn" id="3_oxwhj"]
+
+[node name="ScreenManager" type="Node" unique_id=259766087]
+script = ExtResource("1_wc66e")
+
+[node name="ScreenFade" parent="." unique_id=969834653 instance=ExtResource("2_78wkq")]
+layer = 95
+visible = false
+
+[node name="ScreenFadeExclusions" type="CanvasLayer" parent="." unique_id=1660317159]
+unique_name_in_owner = true
+layer = 96
+
+[node name="ScreenShakeEffect" parent="." unique_id=1395471475 instance=ExtResource("3_oxwhj")]
+unique_name_in_owner = true

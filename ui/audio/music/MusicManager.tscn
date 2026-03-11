@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1m1u1s1i1c1m"]
+
+[ext_resource type="Script" uid="uid://dsdnpiuj3p40q" path="res://ui/audio/music/MusicManager.cs" id="1_music"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_music")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

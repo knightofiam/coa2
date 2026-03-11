@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cijccsr46qw4m"
-path="res://.godot/imported/arm-right.png-b7a92384b26150d321a89fdfaa131db3.ctex"
+path="res://.godot/imported/arm-right.png-2399292066a22b47fd485e0ec06163c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/arm-right.png"
-dest_files=["res://.godot/imported/arm-right.png-b7a92384b26150d321a89fdfaa131db3.ctex"]
+source_file="res://assets/textures/klas/arm-right.png"
+dest_files=["res://.godot/imported/arm-right.png-2399292066a22b47fd485e0ec06163c1.ctex"]
 
 [params]
 

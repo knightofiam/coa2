@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://kuqdhcwh6u50"]
+
+[ext_resource type="Script" uid="uid://mbexeotn361d" path="res://ui/topBar/TopBar.cs" id="1_n852d"]
+[ext_resource type="PackedScene" uid="uid://cs4lhd3o4gh5f" path="res://ui/tooltips/TooltipTrigger.tscn" id="12_tooltip"]
+
+[node name="TopBar" type="CanvasLayer" unique_id=998777767]
+script = ExtResource("1_n852d")
+
+[node name="RootContainer" type="MarginContainer" parent="." unique_id=331131682]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RootContainer" unique_id=1337126816]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Settings" type="MarginContainer" parent="RootContainer/HBoxContainer" unique_id=911207375]
+custom_minimum_size = Vector2(143, 143)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SettingsButton" type="Button" parent="RootContainer/HBoxContainer/Settings" unique_id=719559890]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="TooltipTrigger" parent="RootContainer/HBoxContainer/Settings/SettingsButton" unique_id=228631763 instance=ExtResource("12_tooltip")]
+TooltipText = "Settings
+
+Click to view & change
+game settings such as
+SFX volume."
+
+[node name="Build" type="MarginContainer" parent="RootContainer/HBoxContainer" unique_id=156656485]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BuildLabel" type="Label" parent="RootContainer/HBoxContainer/Build" unique_id=1515767574]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 50
+text = "Build: v1.0-dev"
+horizontal_alignment = 1
+vertical_alignment = 1

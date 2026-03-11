@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dhthvmfhp8p72"]
+
+[ext_resource type="Script" uid="uid://0elxqv61abo2" path="res://ui/screens/mainmenu/MainMenuScreen.cs" id="1_fqb8x"]
+
+[node name="MainMenuScreen" type="Control" unique_id=888850835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqb8x")
+
+[node name="Background" type="PanelContainer" parent="." unique_id=494980919]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=607311973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1921651311]
+layout_mode = 2
+
+[node name="Top" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=95250096]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Top" unique_id=1258549557]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 150
+text = "Cliffs of Akaia II"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=887035378]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 200
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Bottom" unique_id=1046309138]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer/Bottom/Buttons" unique_id=1015902942]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 90
+text = "New Game"
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer/Bottom/Buttons" unique_id=1540563441]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 90
+text = "Quit Game"

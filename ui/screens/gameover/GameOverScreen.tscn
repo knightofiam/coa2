@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bok1gtvlt54vk"]
+
+[ext_resource type="Script" uid="uid://bmi5s54k2naol" path="res://ui/screens/gameover/GameOverScreen.cs" id="1_k6e3l"]
+
+[node name="GameOverScreen" type="Control" unique_id=1981954878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k6e3l")
+
+[node name="Background" type="PanelContainer" parent="." unique_id=516043605]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Foreground" type="MarginContainer" parent="." unique_id=136775656]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Foreground" unique_id=223735416]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Top" type="MarginContainer" parent="Foreground/VBoxContainer" unique_id=73653006]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Foreground/VBoxContainer/Top" unique_id=2088458544]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Middle" type="MarginContainer" parent="Foreground/VBoxContainer" unique_id=228048506]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Bottom" type="MarginContainer" parent="Foreground/VBoxContainer" unique_id=32985284]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 1500
+theme_override_constants/margin_right = 1500
+
+[node name="Buttons" type="VBoxContainer" parent="Foreground/VBoxContainer/Bottom" unique_id=7713457]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="Foreground/VBoxContainer/Bottom/Buttons" unique_id=558544257]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 80
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="Foreground/VBoxContainer/Bottom/Buttons" unique_id=848894563]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpycrsitx3uc3"]
+
+[ext_resource type="Script" uid="uid://287gpeos5iai" path="res://ui/game/messages/GameMessagesView.cs" id="1_ldvt6"]
+
+[node name="GameMessagesView" type="Control" unique_id=1010690786]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ldvt6")

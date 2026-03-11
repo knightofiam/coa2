@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bcjfj65f3hq80"
-path="res://.godot/imported/cliff_arresting.wav-afd2da0707d629d4209441795dc231c1.sample"
+path="res://.godot/imported/cliff_arresting.wav-27f1d498099ee5f2afe5b5a7abddc4de.sample"
 
 [deps]
 
-source_file="res://Assets/sounds/cliff_arresting.wav"
-dest_files=["res://.godot/imported/cliff_arresting.wav-afd2da0707d629d4209441795dc231c1.sample"]
+source_file="res://assets/sounds/cliff_arresting.wav"
+dest_files=["res://.godot/imported/cliff_arresting.wav-27f1d498099ee5f2afe5b5a7abddc4de.sample"]
 
 [params]
 

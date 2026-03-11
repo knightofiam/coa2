@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxLine" format=3 uid="uid://cnt75pihkeuau"]
+
+[resource]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0.5019608, 0.5019608, 0.5019608, 0.6509804)
+thickness = 2

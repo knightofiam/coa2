@@ -1,6 +1,6 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dlc6275iw5pus"]
+[gd_resource type="TileSet" format=3 uid="uid://dlc6275iw5pus"]
 
-[ext_resource type="Texture2D" uid="uid://bdj3rkrjj1jb4" path="res://Assets/tilesets/cliffs.png" id="1_2yt2q"]
+[ext_resource type="Texture2D" uid="uid://bdj3rkrjj1jb4" path="res://assets/tilesets/cliffs.png" id="1_2yt2q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7lihs"]
 rough = true

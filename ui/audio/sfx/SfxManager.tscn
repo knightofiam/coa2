@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dksklsx0075y7"]
+
+[ext_resource type="Script" uid="uid://bynba03jn38kq" path="res://ui/audio/sfx/SfxManager.cs" id="1_sfx"]
+
+[node name="SfxManager" type="Node"]
+script = ExtResource("1_sfx")
+
+[node name="SfxPlayer1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SfxPlayer2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SfxPlayer3" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SfxPlayer4" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SfxPlayer5" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

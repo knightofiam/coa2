@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://o0sau8othhqx"]
+
+[ext_resource type="Script" uid="uid://cfr32kdsy1hyc" path="res://ui/UI.cs" id="1_xmm75"]
+[ext_resource type="PackedScene" uid="uid://b1k4naeordxhj" path="res://ui/screens/manager/ScreenManager.tscn" id="2_hxwew"]
+[ext_resource type="StyleBox" uid="uid://ck3hccvaflkk0" path="res://assets/resources/controls/buttons/default-button-pressed-style.tres" id="2_s15di"]
+[ext_resource type="PackedScene" uid="uid://kuqdhcwh6u50" path="res://ui/topBar/TopBar.tscn" id="3_u132g"]
+[ext_resource type="PackedScene" uid="uid://bkqiyyavr0dsc" path="res://ui/dialogs/settings/SettingsDialog.tscn" id="5_16sqb"]
+[ext_resource type="PackedScene" uid="uid://bj7ukvlc8cm8p" path="res://ui/dialogs/error/ErrorDialog.tscn" id="5_a6px5"]
+[ext_resource type="PackedScene" uid="uid://ct8vy5xujb3n3" path="res://ui/dialogs/confirmation/CustomConfirmationDialog.tscn" id="6_confirm"]
+[ext_resource type="PackedScene" uid="uid://d2cv1ywqoqmx" path="res://ui/dialogs/pause/PauseDialog.tscn" id="7_pause"]
+[ext_resource type="PackedScene" uid="uid://cpfy8xwn0xqm6" path="res://ui/intro/VideoIntro.tscn" id="8_intro"]
+[ext_resource type="PackedScene" uid="uid://df4uv5o0v0v0v" path="res://ui/tooltips/CustomTooltip.tscn" id="9_tooltip"]
+[ext_resource type="PackedScene" uid="uid://c8jyf7qxmjqxu" path="res://ui/audio/AudioManager.tscn" id="13_audio"]
+[ext_resource type="PackedScene" uid="uid://dokkk5fjxgf7o" path="res://tools/threads/GodotThreadBridge.tscn" id="14_3bffh"]
+[ext_resource type="PackedScene" uid="uid://bw8kgaxqmjqxu" path="res://ui/loading/LoadingManager.tscn" id="14_loading"]
+
+[node name="UI" type="Control" unique_id=225472023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmm75")
+ScreenNavigationButtonStyle = ExtResource("2_s15di")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1041337240]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TopBar" parent="." unique_id=1899730963 instance=ExtResource("3_u132g")]
+unique_name_in_owner = true
+layer = 91
+
+[node name="PauseDialog" parent="." unique_id=295138467 instance=ExtResource("7_pause")]
+unique_name_in_owner = true
+layer = 92
+visible = false
+
+[node name="SettingsDialog" parent="." unique_id=2016367284 instance=ExtResource("5_16sqb")]
+unique_name_in_owner = true
+layer = 93
+visible = false
+
+[node name="CustomConfirmationDialog" parent="." unique_id=131228014 instance=ExtResource("6_confirm")]
+unique_name_in_owner = true
+layer = 94
+visible = false
+
+[node name="VideoIntro" parent="." unique_id=1973388011 instance=ExtResource("8_intro")]
+unique_name_in_owner = true
+layer = 97
+visible = false
+
+[node name="ErrorDialog" parent="." unique_id=148008667 instance=ExtResource("5_a6px5")]
+unique_name_in_owner = true
+layer = 98
+visible = false
+
+[node name="CustomTooltip" parent="." unique_id=870606337 instance=ExtResource("9_tooltip")]
+unique_name_in_owner = true
+layer = 99
+visible = false
+
+[node name="ScreenManager" parent="." unique_id=268094284 instance=ExtResource("2_hxwew")]
+unique_name_in_owner = true
+
+[node name="LoadingManager" parent="." unique_id=2132277591 instance=ExtResource("14_loading")]
+unique_name_in_owner = true
+
+[node name="AudioManager" parent="." unique_id=136984518 instance=ExtResource("13_audio")]
+unique_name_in_owner = true
+
+[node name="GodotThreadBridge" parent="." unique_id=572066969 instance=ExtResource("14_3bffh")]
+unique_name_in_owner = true

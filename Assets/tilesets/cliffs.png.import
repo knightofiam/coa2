@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdj3rkrjj1jb4"
-path="res://.godot/imported/cliffs.png-d66e045f591c543669a8e8b2930db647.ctex"
+path="res://.godot/imported/cliffs.png-a13b72a587d674880b5d19ee413a8a29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tilesets/cliffs.png"
-dest_files=["res://.godot/imported/cliffs.png-d66e045f591c543669a8e8b2930db647.ctex"]
+source_file="res://assets/tilesets/cliffs.png"
+dest_files=["res://.godot/imported/cliffs.png-a13b72a587d674880b5d19ee413a8a29.ctex"]
 
 [params]
 

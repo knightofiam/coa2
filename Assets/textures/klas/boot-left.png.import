@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1dfjow35c02u"
-path="res://.godot/imported/boot-left.png-da86bd533828d9d921371211ac655f22.ctex"
+path="res://.godot/imported/boot-left.png-4e34a882e250cc7f70e2692911f84719.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/boot-left.png"
-dest_files=["res://.godot/imported/boot-left.png-da86bd533828d9d921371211ac655f22.ctex"]
+source_file="res://assets/textures/klas/boot-left.png"
+dest_files=["res://.godot/imported/boot-left.png-4e34a882e250cc7f70e2692911f84719.ctex"]
 
 [params]
 

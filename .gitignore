@@ -26,10 +26,14 @@ mono_crash.*
 *.x86_64
 
 # Exported app directory
-build/
+build/*
+!/build/BuildInfo.cs
 
 # Test results
 reports/
+
+# GdUnit4
+addons/gdUnit4/GdUnitRunner.cfg
 
 # ==========================================================================================
 # End Godot section

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://m0houtj4v2at"]
+
+[ext_resource type="Script" uid="uid://bug0425hb8voy" path="res://scripts/creatures/Butterfly/ButterflyAnimator.cs" id="1_animator"]
+[ext_resource type="Texture2D" uid="uid://bdj3rkrjj1jb4" path="res://assets/tilesets/cliffs.png" id="2_5mum6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vf2w"]
+atlas = ExtResource("2_5mum6")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c2m3"]
+atlas = ExtResource("2_5mum6")
+region = Rect2(80, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_butterfly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vf2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2m3")
+}],
+"loop": true,
+"name": &"evading",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vf2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2m3")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 8.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vf2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2m3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vf2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2m3")
+}],
+"loop": true,
+"name": &"perching",
+"speed": 12.0
+}]
+
+[node name="ButterflyAnimator" type="Node2D"]
+script = ExtResource("1_animator")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_butterfly")
+animation = &"evading"
+autoplay = "idle"
+offset = Vector2(0.5, -1.5)

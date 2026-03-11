@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs4lhd3o4gh5f"]
+
+[ext_resource type="Script" uid="uid://bhmld8gp3hri7" path="res://ui/tooltips/TooltipTrigger.cs" id="1_yunvt"]
+
+[node name="TooltipTrigger" type="Node"]
+script = ExtResource("1_yunvt")
+TooltipText = "Tooltip
+
+This is an example of
+a custom tooltip."

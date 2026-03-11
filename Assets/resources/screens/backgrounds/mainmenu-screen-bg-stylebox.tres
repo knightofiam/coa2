@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ddqm2a7sglb8t"]
+
+[ext_resource type="Texture2D" uid="uid://dt112k0rp1hxs" path="res://assets/images/backgrounds/main_menu_bg.jpg" id="1_kyiag"]
+
+[resource]
+texture = ExtResource("1_kyiag")

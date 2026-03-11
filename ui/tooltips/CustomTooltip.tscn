@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://df4uv5o0v0v0v"]
+
+[ext_resource type="Script" uid="uid://dvxnhhqf7k7qg" path="res://ui/tooltips/CustomTooltip.cs" id="1_custom"]
+[ext_resource type="StyleBox" uid="uid://bg7mrxu2rk4lj" path="res://assets/resources/controls/tooltips/custom-tooltip-panel-style.tres" id="2_j7158"]
+
+[node name="CustomTooltip" type="CanvasLayer"]
+script = ExtResource("1_custom")
+
+[node name="TooltipPanel" type="PanelContainer" parent="."]
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("2_j7158")
+
+[node name="TooltipLabel" type="Label" parent="TooltipPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 0.7647059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "Tooltip text"
+
+[node name="DelayTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

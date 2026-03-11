@@ -1,6 +1,6 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://by0xgvrr7d7km"]
+[gd_resource type="TileSet" format=3 uid="uid://by0xgvrr7d7km"]
 
-[ext_resource type="Texture2D" uid="uid://bdj3rkrjj1jb4" path="res://Assets/tilesets/cliffs.png" id="1_0sesl"]
+[ext_resource type="Texture2D" uid="uid://bdj3rkrjj1jb4" path="res://assets/tilesets/cliffs.png" id="1_0sesl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o3too"]
 absorbent = true

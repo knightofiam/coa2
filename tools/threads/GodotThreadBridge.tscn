@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dokkk5fjxgf7o"]
+
+[ext_resource type="Script" uid="uid://cm2cm620kjc25" path="res://tools/threads/GodotThreadBridge.cs" id="1_rldsv"]
+
+[node name="GodotThreadBridge" type="Node" unique_id=572066969]
+script = ExtResource("1_rldsv")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://da7axh7s1qsu8"]
+
+[ext_resource type="Script" uid="uid://ms5gaa81p4pf" path="res://ui/effects/screenFade/ScreenFade.cs" id="1_i1om7"]
+
+[node name="ScreenFade" type="CanvasLayer"]
+script = ExtResource("1_i1om7")
+TimeSeconds = 0.35
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

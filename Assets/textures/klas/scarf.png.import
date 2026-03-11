@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clfviudxnhosx"
-path="res://.godot/imported/scarf.png-59a8f7a2523746cd24e003ee723744f5.ctex"
+path="res://.godot/imported/scarf.png-bd3b6fefb7a3b3886a367aa106880ecc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/scarf.png"
-dest_files=["res://.godot/imported/scarf.png-59a8f7a2523746cd24e003ee723744f5.ctex"]
+source_file="res://assets/textures/klas/scarf.png"
+dest_files=["res://.godot/imported/scarf.png-bd3b6fefb7a3b3886a367aa106880ecc.ctex"]
 
 [params]
 

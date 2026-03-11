@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi5t5jymatu7c"
-path="res://.godot/imported/hat-outline.png-412f18ce1852c842b5397ed17363e0c2.ctex"
+path="res://.godot/imported/hat-outline.png-3a1dca7311c50fe3884ed59e43cf1e5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/hat-outline.png"
-dest_files=["res://.godot/imported/hat-outline.png-412f18ce1852c842b5397ed17363e0c2.ctex"]
+source_file="res://assets/textures/klas/hat-outline.png"
+dest_files=["res://.godot/imported/hat-outline.png-3a1dca7311c50fe3884ed59e43cf1e5d.ctex"]
 
 [params]
 

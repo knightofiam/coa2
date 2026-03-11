@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b33xp20d3q5px"
-path="res://.godot/imported/ambience_summer.wav-f6cfcf2f29b1d8bfdd5ebaf2c8eb8654.sample"
+path="res://.godot/imported/ambience_summer.wav-e5eeaca86d720aa01654ac884491f25b.sample"
 
 [deps]
 
-source_file="res://Assets/sounds/ambience_summer.wav"
-dest_files=["res://.godot/imported/ambience_summer.wav-f6cfcf2f29b1d8bfdd5ebaf2c8eb8654.sample"]
+source_file="res://assets/sounds/ambience_summer.wav"
+dest_files=["res://.godot/imported/ambience_summer.wav-e5eeaca86d720aa01654ac884491f25b.sample"]
 
 [params]
 

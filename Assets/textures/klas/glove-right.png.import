@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqjbjoaetby7b"
-path="res://.godot/imported/glove-right.png-b626c934da44bc866f1db01b210da23f.ctex"
+path="res://.godot/imported/glove-right.png-848f990d8b5c9f6ffa8c1a54b72a404c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/glove-right.png"
-dest_files=["res://.godot/imported/glove-right.png-b626c934da44bc866f1db01b210da23f.ctex"]
+source_file="res://assets/textures/klas/glove-right.png"
+dest_files=["res://.godot/imported/glove-right.png-848f990d8b5c9f6ffa8c1a54b72a404c.ctex"]
 
 [params]
 

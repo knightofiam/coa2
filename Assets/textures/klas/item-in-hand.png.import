@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs0m4lmsx7d7m"
-path="res://.godot/imported/item-in-hand.png-2ba960a90f1d7eacbc0f97d8a3780c5e.ctex"
+path="res://.godot/imported/item-in-hand.png-5d28a9e5a232c083074e077d407a6788.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/klas/item-in-hand.png"
-dest_files=["res://.godot/imported/item-in-hand.png-2ba960a90f1d7eacbc0f97d8a3780c5e.ctex"]
+source_file="res://assets/textures/klas/item-in-hand.png"
+dest_files=["res://.godot/imported/item-in-hand.png-5d28a9e5a232c083074e077d407a6788.ctex"]
 
 [params]
 
