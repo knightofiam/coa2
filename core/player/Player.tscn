@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://cibydvnhc6cyx"]
 
-[ext_resource type="Script" uid="uid://cbayaomyv7jko" path="res://scripts/player/Player.cs" id="1_x601d"]
-[ext_resource type="PackedScene" uid="uid://b4pknbk3nohjh" path="res://scenes/Player/PlayerBody.tscn" id="2_dewec"]
-[ext_resource type="PackedScene" uid="uid://dpou1aajk4btf" path="res://scenes/Player/PlayerAnimator.tscn" id="2_jmcll"]
+[ext_resource type="Script" uid="uid://cbayaomyv7jko" path="res://core/player/Player.cs" id="1_x601d"]
+[ext_resource type="PackedScene" uid="uid://b4pknbk3nohjh" path="res://core/player/PlayerBody.tscn" id="2_dewec"]
+[ext_resource type="PackedScene" uid="uid://dpou1aajk4btf" path="res://core/player/PlayerAnimator.tscn" id="2_jmcll"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" unique_id=1758005385]
 script = ExtResource("1_x601d")
 
-[node name="PlayerAnimator" parent="." instance=ExtResource("2_jmcll")]
+[node name="PlayerAnimator" parent="." unique_id=2098798430 instance=ExtResource("2_jmcll")]
 DefaultFollowTargetPath = NodePath("../PlayerBody")
 
-[node name="PlayerBody" parent="." node_paths=PackedStringArray("Animator") instance=ExtResource("2_dewec")]
+[node name="PlayerBody" parent="." unique_id=1720742404 node_paths=PackedStringArray("Animator") instance=ExtResource("2_dewec")]
 collision_mask = 54
 Animator = NodePath("../PlayerAnimator")
 JumpVelocity = -850.0
 
-[node name="ButterflyPerch" type="Marker2D" parent="." groups=["butterfly_perch"]]
+[node name="ButterflyPerch" type="Marker2D" parent="." unique_id=1560668980 groups=["butterfly_perch"]]
 position = Vector2(0, -60)

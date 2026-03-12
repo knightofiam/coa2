@@ -1,31 +1,31 @@
 [gd_scene format=3 uid="uid://dpou1aajk4btf"]
 
-[ext_resource type="Script" uid="uid://bxkjady2qws2w" path="res://scripts/player/PlayerAnimator.cs" id="1_2obx7"]
-[ext_resource type="Texture2D" uid="uid://cm4p8aikumpaf" path="res://assets/textures/klas/foot-right.png" id="2_3w6v2"]
-[ext_resource type="Texture2D" uid="uid://nw4r05kcgaip" path="res://assets/textures/klas/boot-right.png" id="3_axcc3"]
-[ext_resource type="Texture2D" uid="uid://fjq43eoanf5r" path="res://assets/textures/klas/body.png" id="4_dm7n6"]
-[ext_resource type="Texture2D" uid="uid://bg18quijvvwd0" path="res://assets/textures/klas/foot-left.png" id="5_5j22u"]
-[ext_resource type="Texture2D" uid="uid://duj3vpmtdbbsu" path="res://assets/textures/klas/pants.png" id="6_myqkd"]
-[ext_resource type="Texture2D" uid="uid://c1dfjow35c02u" path="res://assets/textures/klas/boot-left.png" id="7_v3lte"]
-[ext_resource type="Texture2D" uid="uid://bga74bb0qjbhg" path="res://assets/textures/klas/shirt.png" id="8_k7ru3"]
-[ext_resource type="Texture2D" uid="uid://dos2cr6s3l16p" path="res://assets/textures/klas/belt.png" id="9_vk57q"]
-[ext_resource type="Texture2D" uid="uid://brd44hc1ume55" path="res://assets/textures/klas/head-outline-rear.png" id="10_nv2pq"]
-[ext_resource type="Texture2D" uid="uid://bi5t5jymatu7c" path="res://assets/textures/klas/hat-outline.png" id="11_g5sgt"]
-[ext_resource type="Texture2D" uid="uid://b0rdswn4bmjv6" path="res://assets/textures/klas/backpack.png" id="12_u7hdy"]
-[ext_resource type="Texture2D" uid="uid://j1mn5vrerl0i" path="res://assets/textures/klas/backpack-straps.png" id="13_h41y5"]
-[ext_resource type="Texture2D" uid="uid://bssxm4eyv0t6v" path="res://assets/textures/klas/head.png" id="14_rcwsc"]
-[ext_resource type="Texture2D" uid="uid://c0htmhiun37rx" path="res://assets/textures/klas/hair.png" id="15_qixiv"]
-[ext_resource type="Texture2D" uid="uid://n1vsykqnl5on" path="res://assets/textures/klas/hat.png" id="16_sr1rd"]
-[ext_resource type="Texture2D" uid="uid://bvuev81fst8qh" path="res://assets/textures/klas/item-in-backpack.png" id="17_io612"]
-[ext_resource type="Texture2D" uid="uid://clfviudxnhosx" path="res://assets/textures/klas/scarf.png" id="18_24toa"]
-[ext_resource type="Texture2D" uid="uid://cfjmagu5q03e5" path="res://assets/textures/klas/hand-right.png" id="19_pg6lj"]
-[ext_resource type="Texture2D" uid="uid://bs0m4lmsx7d7m" path="res://assets/textures/klas/item-in-hand.png" id="20_p36q8"]
-[ext_resource type="Texture2D" uid="uid://c0ry0cji6p8y1" path="res://assets/textures/klas/arm-left.png" id="21_l2gst"]
-[ext_resource type="Texture2D" uid="uid://cpmw1aapudk17" path="res://assets/textures/klas/shirt-sleeve-left.png" id="22_k1jt6"]
-[ext_resource type="Texture2D" uid="uid://dbinnn4x6lfvq" path="res://assets/textures/klas/hand-left.png" id="23_vc3pg"]
-[ext_resource type="Texture2D" uid="uid://jqlp58g5wgu2" path="res://assets/textures/klas/glove-left.png" id="24_3qbcj"]
-[ext_resource type="Texture2D" uid="uid://cijccsr46qw4m" path="res://assets/textures/klas/arm-right.png" id="25_ndsd7"]
-[ext_resource type="Texture2D" uid="uid://bjeyscwltujr8" path="res://assets/textures/klas/shirt-sleeve-right.png" id="26_tfrdv"]
+[ext_resource type="Script" uid="uid://bxkjady2qws2w" path="res://core/player/PlayerAnimator.cs" id="1_2obx7"]
+[ext_resource type="Texture2D" uid="uid://cm4p8aikumpaf" path="res://assets/images/klas/foot-right.png" id="2_3w6v2"]
+[ext_resource type="Texture2D" uid="uid://nw4r05kcgaip" path="res://assets/images/klas/boot-right.png" id="3_axcc3"]
+[ext_resource type="Texture2D" uid="uid://fjq43eoanf5r" path="res://assets/images/klas/body.png" id="4_dm7n6"]
+[ext_resource type="Texture2D" uid="uid://bg18quijvvwd0" path="res://assets/images/klas/foot-left.png" id="5_5j22u"]
+[ext_resource type="Texture2D" uid="uid://duj3vpmtdbbsu" path="res://assets/images/klas/pants.png" id="6_myqkd"]
+[ext_resource type="Texture2D" uid="uid://c1dfjow35c02u" path="res://assets/images/klas/boot-left.png" id="7_v3lte"]
+[ext_resource type="Texture2D" uid="uid://bga74bb0qjbhg" path="res://assets/images/klas/shirt.png" id="8_k7ru3"]
+[ext_resource type="Texture2D" uid="uid://dos2cr6s3l16p" path="res://assets/images/klas/belt.png" id="9_vk57q"]
+[ext_resource type="Texture2D" uid="uid://brd44hc1ume55" path="res://assets/images/klas/head-outline-rear.png" id="10_nv2pq"]
+[ext_resource type="Texture2D" uid="uid://bi5t5jymatu7c" path="res://assets/images/klas/hat-outline.png" id="11_g5sgt"]
+[ext_resource type="Texture2D" uid="uid://b0rdswn4bmjv6" path="res://assets/images/klas/backpack.png" id="12_u7hdy"]
+[ext_resource type="Texture2D" uid="uid://j1mn5vrerl0i" path="res://assets/images/klas/backpack-straps.png" id="13_h41y5"]
+[ext_resource type="Texture2D" uid="uid://bssxm4eyv0t6v" path="res://assets/images/klas/head.png" id="14_rcwsc"]
+[ext_resource type="Texture2D" uid="uid://c0htmhiun37rx" path="res://assets/images/klas/hair.png" id="15_qixiv"]
+[ext_resource type="Texture2D" uid="uid://n1vsykqnl5on" path="res://assets/images/klas/hat.png" id="16_sr1rd"]
+[ext_resource type="Texture2D" uid="uid://bvuev81fst8qh" path="res://assets/images/klas/item-in-backpack.png" id="17_io612"]
+[ext_resource type="Texture2D" uid="uid://clfviudxnhosx" path="res://assets/images/klas/scarf.png" id="18_24toa"]
+[ext_resource type="Texture2D" uid="uid://cfjmagu5q03e5" path="res://assets/images/klas/hand-right.png" id="19_pg6lj"]
+[ext_resource type="Texture2D" uid="uid://bs0m4lmsx7d7m" path="res://assets/images/klas/item-in-hand.png" id="20_p36q8"]
+[ext_resource type="Texture2D" uid="uid://c0ry0cji6p8y1" path="res://assets/images/klas/arm-left.png" id="21_l2gst"]
+[ext_resource type="Texture2D" uid="uid://cpmw1aapudk17" path="res://assets/images/klas/shirt-sleeve-left.png" id="22_k1jt6"]
+[ext_resource type="Texture2D" uid="uid://dbinnn4x6lfvq" path="res://assets/images/klas/hand-left.png" id="23_vc3pg"]
+[ext_resource type="Texture2D" uid="uid://jqlp58g5wgu2" path="res://assets/images/klas/glove-left.png" id="24_3qbcj"]
+[ext_resource type="Texture2D" uid="uid://cijccsr46qw4m" path="res://assets/images/klas/arm-right.png" id="25_ndsd7"]
+[ext_resource type="Texture2D" uid="uid://bjeyscwltujr8" path="res://assets/images/klas/shirt-sleeve-right.png" id="26_tfrdv"]
 
 [sub_resource type="Animation" id="2"]
 resource_name = "player_attacking"
@@ -3109,112 +3109,108 @@ _data = {
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5j3x"]
 
-[node name="PlayerAnimator" type="Node2D"]
+[node name="PlayerAnimator" type="Node2D" unique_id=657816127]
 script = ExtResource("1_2obx7")
 
-[node name="Players" type="Node2D" parent="."]
+[node name="Players" type="Node2D" parent="." unique_id=682456308]
 
-[node name="Primary" type="AnimationPlayer" parent="Players"]
+[node name="Primary" type="AnimationPlayer" parent="Players" unique_id=2121068328]
 unique_name_in_owner = true
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_3a4ab")
-}
+libraries/ = SubResource("AnimationLibrary_3a4ab")
 
-[node name="Secondary" type="AnimationPlayer" parent="Players"]
+[node name="Secondary" type="AnimationPlayer" parent="Players" unique_id=117073962]
 unique_name_in_owner = true
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_ryc4p")
-}
+libraries/ = SubResource("AnimationLibrary_ryc4p")
 
-[node name="Sprites" type="Node2D" parent="."]
+[node name="Sprites" type="Node2D" parent="." unique_id=28846847]
+scale = Vector2(24, 24)
 
-[node name="foot-right" type="Sprite2D" parent="Sprites"]
+[node name="foot-right" type="Sprite2D" parent="Sprites" unique_id=346610198]
 visible = false
 texture = ExtResource("2_3w6v2")
 hframes = 42
 
-[node name="boot-right" type="Sprite2D" parent="Sprites"]
+[node name="boot-right" type="Sprite2D" parent="Sprites" unique_id=809162733]
 texture = ExtResource("3_axcc3")
 hframes = 42
 
-[node name="body" type="Sprite2D" parent="Sprites"]
+[node name="body" type="Sprite2D" parent="Sprites" unique_id=1708955166]
 texture = ExtResource("4_dm7n6")
 hframes = 42
 
-[node name="foot-left" type="Sprite2D" parent="Sprites"]
+[node name="foot-left" type="Sprite2D" parent="Sprites" unique_id=499360886]
 visible = false
 texture = ExtResource("5_5j22u")
 hframes = 42
 
-[node name="pants" type="Sprite2D" parent="Sprites"]
+[node name="pants" type="Sprite2D" parent="Sprites" unique_id=351601327]
 texture = ExtResource("6_myqkd")
 hframes = 42
 
-[node name="boot-left" type="Sprite2D" parent="Sprites"]
+[node name="boot-left" type="Sprite2D" parent="Sprites" unique_id=558999287]
 texture = ExtResource("7_v3lte")
 hframes = 42
 
-[node name="shirt" type="Sprite2D" parent="Sprites"]
+[node name="shirt" type="Sprite2D" parent="Sprites" unique_id=897536516]
 texture = ExtResource("8_k7ru3")
 hframes = 42
 
-[node name="belt" type="Sprite2D" parent="Sprites"]
+[node name="belt" type="Sprite2D" parent="Sprites" unique_id=236643776]
 texture = ExtResource("9_vk57q")
 hframes = 42
 
-[node name="head-outline-rear" type="Sprite2D" parent="Sprites"]
+[node name="head-outline-rear" type="Sprite2D" parent="Sprites" unique_id=1516782242]
 texture = ExtResource("10_nv2pq")
 hframes = 42
 
-[node name="hat-outline" type="Sprite2D" parent="Sprites"]
+[node name="hat-outline" type="Sprite2D" parent="Sprites" unique_id=1186821421]
 visible = false
 texture = ExtResource("11_g5sgt")
 hframes = 42
 
-[node name="backpack" type="Sprite2D" parent="Sprites"]
+[node name="backpack" type="Sprite2D" parent="Sprites" unique_id=1157813794]
 texture = ExtResource("12_u7hdy")
 hframes = 42
 
-[node name="backpack-straps" type="Sprite2D" parent="Sprites"]
+[node name="backpack-straps" type="Sprite2D" parent="Sprites" unique_id=254342550]
 texture = ExtResource("13_h41y5")
 hframes = 42
 
-[node name="head" type="Sprite2D" parent="Sprites"]
+[node name="head" type="Sprite2D" parent="Sprites" unique_id=519068243]
 texture = ExtResource("14_rcwsc")
 hframes = 42
 
-[node name="hair" type="Sprite2D" parent="Sprites"]
+[node name="hair" type="Sprite2D" parent="Sprites" unique_id=1043221463]
 texture = ExtResource("15_qixiv")
 hframes = 42
 
-[node name="hat" type="Sprite2D" parent="Sprites"]
+[node name="hat" type="Sprite2D" parent="Sprites" unique_id=400413869]
 visible = false
 texture = ExtResource("16_sr1rd")
 hframes = 42
 
-[node name="item-in-backpack" type="Sprite2D" parent="Sprites"]
-visible = false
+[node name="item-in-backpack" type="Sprite2D" parent="Sprites" unique_id=83621455]
 position = Vector2(-0.125, 0)
 texture = ExtResource("17_io612")
 hframes = 42
 
-[node name="scarf" type="Sprite2D" parent="Sprites"]
+[node name="scarf" type="Sprite2D" parent="Sprites" unique_id=1938008641]
 visible = false
 texture = ExtResource("18_24toa")
 hframes = 42
 
-[node name="hand-right" type="Sprite2D" parent="Sprites"]
+[node name="hand-right" type="Sprite2D" parent="Sprites" unique_id=1694456110]
 texture = ExtResource("19_pg6lj")
 hframes = 42
 
-[node name="glove-right" type="Sprite2D" parent="Sprites"]
+[node name="glove-right" type="Sprite2D" parent="Sprites" unique_id=617136136]
 visible = false
 texture = SubResource("CompressedTexture2D_prgg3")
 hframes = 42
 
-[node name="item-in-hand" type="Sprite2D" parent="Sprites"]
+[node name="item-in-hand" type="Sprite2D" parent="Sprites" unique_id=215425442]
 visible = false
 position = Vector2(1, 2)
 rotation = -0.34906584
@@ -3222,35 +3218,35 @@ texture = ExtResource("20_p36q8")
 hframes = 42
 frame = 7
 
-[node name="item-equipping" type="Sprite2D" parent="Sprites"]
+[node name="item-equipping" type="Sprite2D" parent="Sprites" unique_id=1047295694]
 visible = false
 texture = SubResource("CompressedTexture2D_u5j3x")
 hframes = 42
 frame = 6
 
-[node name="arm-left" type="Sprite2D" parent="Sprites"]
+[node name="arm-left" type="Sprite2D" parent="Sprites" unique_id=2089021620]
 visible = false
 texture = ExtResource("21_l2gst")
 hframes = 42
 
-[node name="shirt-sleeve-left" type="Sprite2D" parent="Sprites"]
+[node name="shirt-sleeve-left" type="Sprite2D" parent="Sprites" unique_id=1178893571]
 texture = ExtResource("22_k1jt6")
 hframes = 42
 
-[node name="hand-left" type="Sprite2D" parent="Sprites"]
+[node name="hand-left" type="Sprite2D" parent="Sprites" unique_id=80605535]
 texture = ExtResource("23_vc3pg")
 hframes = 42
 
-[node name="glove-left" type="Sprite2D" parent="Sprites"]
+[node name="glove-left" type="Sprite2D" parent="Sprites" unique_id=1861703016]
 visible = false
 texture = ExtResource("24_3qbcj")
 hframes = 42
 
-[node name="arm-right" type="Sprite2D" parent="Sprites"]
+[node name="arm-right" type="Sprite2D" parent="Sprites" unique_id=2061615715]
 visible = false
 texture = ExtResource("25_ndsd7")
 hframes = 42
 
-[node name="shirt-sleeve-right" type="Sprite2D" parent="Sprites"]
+[node name="shirt-sleeve-right" type="Sprite2D" parent="Sprites" unique_id=175873677]
 texture = ExtResource("26_tfrdv")
 hframes = 42

@@ -16,9 +16,10 @@ public static class StyleData
   {
     _screenIdsToBackgroundStyles = new Dictionary <ScreenId, StyleBox>
     {
-      { ScreenId.MainMenu, ResourceLoader.Load <StyleBox> ("res://assets/resources/screens/backgrounds/mainmenu-screen-bg-stylebox.tres") },
-      { ScreenId.Game, ResourceLoader.Load <StyleBox> ("res://assets/resources/screens/backgrounds/game-screen-bg-stylebox.tres") },
-      { ScreenId.GameOver, ResourceLoader.Load <StyleBox> ("res://assets/resources/screens/backgrounds/gameover-screen-bg-stylebox.tres") }
+      // TODO Uncomment when we have screen background images.
+      // { ScreenId.MainMenu, ResourceLoader.Load <StyleBox> ("res://assets/resources/screens/backgrounds/mainmenu-screen-bg-stylebox.tres") },
+      // { ScreenId.Game, ResourceLoader.Load <StyleBox> ("res://assets/resources/screens/backgrounds/game-screen-bg-stylebox.tres") },
+      // { ScreenId.GameOver, ResourceLoader.Load <StyleBox> ("res://assets/resources/screens/backgrounds/gameover-screen-bg-stylebox.tres") }
     };
 
     Log.Debug ("Loaded style data");

@@ -37,10 +37,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="build\BuildInfo.cs.uid" />
-    <Content Include="ui\topBar\TopBar.cs.uid" />
-    <Content Include="ui\topBar\TopBar.tscn" />
-    <Content Include="ui\UI.tscn" />
-  </ItemGroup>
 </Project>
