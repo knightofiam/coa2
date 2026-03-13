@@ -1,3 +1,4 @@
+using com.forerunnergames.coa2.ui.audio.music;
 using com.forerunnergames.coa2.ui.data;
 using com.forerunnergames.coa2.ui.screens.context;
 using com.forerunnergames.coa2.ui.audio.sfx;
@@ -44,7 +45,7 @@ public partial class MainMenuScreen : Control, IScreen
   {
     if (_ui.IsAnyDialogVisible()) return;
     Log.Info ("Pressed Start Game button");
-    _ui.GoToScreen (ScreenId.Game);
+    _ui.GoToScreen (ScreenId.Game, nextMusicTrack: MusicId.Summer);
   }
 
   private void OnQuitGameButtonPressed()

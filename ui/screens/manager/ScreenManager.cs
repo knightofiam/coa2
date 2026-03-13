@@ -26,7 +26,7 @@ public partial class ScreenManager : Node
   private static readonly Logger Log = LogManager.GetCurrentClassLogger();
   public GameSettings? GetCurrentGameSettings() => (GetCurrentScreen() as GameScreen)?.CurrentGameSettings;
   public bool IsCurrent (ScreenId screenId) => GetCurrentScreen()?.ScreenId == screenId;
-  public void GoTo (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null) => _ = GoToScreenAsync (screenId, screenContext, fade, fadeInDuration, fadeOutDuration);
+  public void GoTo (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null, MusicId? nextMusicTrack = null) => _ = GoToScreenAsync (screenId, screenContext, fade, fadeInDuration, fadeOutDuration, nextMusicTrack);
   public void ShakeCurrentScreen (float intensity, float durationSeconds) => _screenShakeEffect.Play (GetCurrentScreen()?.AsControl(), intensity, durationSeconds);
   private IScreen? GetCurrentScreen() => GetTree().GetCurrentScene() as IScreen;
   private static bool IsScenePathValid (string? scenePath) => scenePath != null && ResourceLoader.Exists (scenePath) && scenePath.EndsWith (".tscn");
@@ -40,11 +40,10 @@ public partial class ScreenManager : Node
     _ = CheckScreenRegistrationsAsync();
   }
 
-  private async Task GoToScreenAsync (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null)
+  private async Task GoToScreenAsync (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null, MusicId? nextMusicTrack = null)
   {
     var path = ScreenData.GetScenePath (screenId);
     if (!CheckPath (path, screenId)) return;
-    var nextMusicTrack = AudioData.GetMusicId (screenId);
     if (!await CheckChangeScene (path, screenId, fade, fadeOutDuration, nextMusicTrack)) return;
     await ToSignal (GetTree(), SceneTree.SignalName.ProcessFrame);
     await ToSignal (GetTree(), SceneTree.SignalName.ProcessFrame);

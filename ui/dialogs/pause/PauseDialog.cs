@@ -1,6 +1,7 @@
 using System;
 using com.forerunnergames.coa2.tools.events;
 using com.forerunnergames.coa2.tools.events.args;
+using com.forerunnergames.coa2.ui.audio.music;
 using com.forerunnergames.coa2.ui.screens;
 using com.forerunnergames.coa2.ui.tooltips;
 using com.forerunnergames.coa2.ui.audio.sfx;
@@ -16,7 +17,6 @@ public partial class PauseDialog : CanvasLayer
   private UI _ui = null!;
   private Button _resumeButton = null!;
   private Button _settingsButton = null!;
-  private Button _restartGameButton = null!;
   private Button _quitToMenuButton = null!;
   private Action? _onResume;
   private Action? _onQuitToMenu;
@@ -28,15 +28,12 @@ public partial class PauseDialog : CanvasLayer
   {
     _ui = GetNode <UI> ("/root/UI");
     _resumeButton = GetNode <Button> ("%ResumeButton");
-    _restartGameButton = GetNode <Button> ("%RestartButton");
     _settingsButton = GetNode <Button> ("%SettingsButton");
     _quitToMenuButton = GetNode <Button> ("%QuitToMenuButton");
     _resumeButton.Pressed += OnResumeButtonPressed;
     _settingsButton.Pressed += OnSettingsButtonPressed;
-    _restartGameButton.Pressed += OnRestartGameButtonPressed;
     _quitToMenuButton.Pressed += OnQuitToMenuButtonPressed;
     ButtonSfx.AddClickAndHoverSfx (_resumeButton);
-    ButtonSfx.AddClickAndHoverSfx (_restartGameButton);
     ButtonSfx.AddClickAndHoverSfx (_settingsButton);
     ButtonSfx.AddClickAndHoverSfx (_quitToMenuButton);
     Hide (notify: false);
@@ -46,7 +43,6 @@ public partial class PauseDialog : CanvasLayer
   {
     _resumeButton.Pressed -= OnResumeButtonPressed;
     _settingsButton.Pressed -= OnSettingsButtonPressed;
-    _restartGameButton.Pressed -= OnRestartGameButtonPressed;
     _quitToMenuButton.Pressed -= OnQuitToMenuButtonPressed;
   }
 
@@ -95,7 +91,7 @@ public partial class PauseDialog : CanvasLayer
     TooltipManager.HideTooltip();
     if (CheckQuitApplication()) return;
     Log.Debug ("Quitting to main menu");
-    _ui.GoToScreen (ScreenId.MainMenu);
+    _ui.GoToScreen (ScreenId.MainMenu, nextMusicTrack: MusicId.MainMenu);
   }
 
   private bool CheckResume()
@@ -103,14 +99,6 @@ public partial class PauseDialog : CanvasLayer
     if (!Visible) return false;
     Resume();
     return true;
-  }
-
-  private void OnRestartGameButtonPressed()
-  {
-    if (!Visible) return;
-    Log.Info ("Pressed restart game button");
-    Hide();
-    _ui.GoToScreen (ScreenId.Game);
   }
 
   private bool CheckQuitApplication()

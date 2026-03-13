@@ -5,6 +5,7 @@ using com.forerunnergames.coa2.core.settings;
 using com.forerunnergames.coa2.tools.events;
 using com.forerunnergames.coa2.tools.events.args;
 using com.forerunnergames.coa2.ui.audio;
+using com.forerunnergames.coa2.ui.audio.music;
 using com.forerunnergames.coa2.ui.screens;
 using com.forerunnergames.coa2.ui.audio.sfx;
 using Godot;
@@ -293,7 +294,7 @@ public partial class SettingsDialog : CanvasLayer
   private void OnNewGameConfirmationDialogConfirmed()
   {
     Log.Debug ("User confirmed: Starting new game with updated settings");
-    _ui.GoToScreen (ScreenId.Game);
+    _ui.GoToScreen (ScreenId.Game, nextMusicTrack: MusicId.Summer);
   }
 
   private void InitializeStartScreenDropDown()

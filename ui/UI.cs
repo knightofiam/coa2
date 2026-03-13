@@ -4,6 +4,7 @@ using System;
 using com.forerunnergames.coa2.core.data;
 using com.forerunnergames.coa2.core.game;
 using com.forerunnergames.coa2.ui.audio;
+using com.forerunnergames.coa2.ui.audio.music;
 using com.forerunnergames.coa2.ui.screens;
 using com.forerunnergames.coa2.ui.screens.context;
 using com.forerunnergames.coa2.ui.tooltips;
@@ -44,7 +45,7 @@ public partial class UI : Control
   public bool IsAnyDialogVisible() => _visibleDialogs > 0;
   public bool IsWindowFocused() => _window.HasFocus();
   public Rect2 GetTopBarGlobalRect() => _topBar.GlobalRect();
-  public void GoToScreen (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null) => _screenManager.GoTo (screenId, screenContext, fade, fadeInDuration, fadeOutDuration);
+  public void GoToScreen (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null, MusicId? nextMusicTrack = null) => _screenManager.GoTo (screenId, screenContext, fade, fadeInDuration, fadeOutDuration, nextMusicTrack);
   public void SetLoadingText (string text) => _topBar.SetLoadingText (text);
   public void HideTopBar() => _topBar.Hide();
   public void ShowTopBar() => _topBar.Show();

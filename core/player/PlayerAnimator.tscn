@@ -3125,7 +3125,6 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ryc4p")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=28846847]
-scale = Vector2(24, 24)
 
 [node name="foot-right" type="Sprite2D" parent="Sprites" unique_id=346610198]
 visible = false

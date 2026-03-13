@@ -13,7 +13,6 @@ namespace com.forerunnergames.coa2.core.settings;
 public class Settings
 {
   // @formatter:off
-
   public static Settings Instance => _instance ??= Load();
   public static GameSettings GameSettingsSnapshot => new();
   public float MusicVolume { get; set; } = 1.0f; // 0.0 to 1.0

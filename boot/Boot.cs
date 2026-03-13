@@ -45,12 +45,12 @@ public partial class Boot : Node
   private void StartGame()
   {
     // Don't fade out (video already faded), but do fade in; set fadeOutDuration to 0
-    _ui.GoToScreen (Settings.Instance.StartScreen.HasValue ? Settings.Instance.StartScreen.Value : ScreenId.MainMenu, fade: true, fadeOutDuration: 0.0f, fadeInDuration: 0.35f);
+    _ui.GoToScreen (Settings.Instance.StartScreen.HasValue ? Settings.Instance.StartScreen.Value : ScreenId.MainMenu, fade: true, fadeOutDuration: 0.0f, fadeInDuration: 0.35f, nextMusicTrack: MusicId.MainMenu);
   }
 
   private void PlayIntroVideo()
   {
-    AudioManager.PlayMusic (MusicId.MainMenu); // Start menu music (continues to Hub screen)
+    AudioManager.PlayMusic (MusicId.MainMenu); // Start menu music (continues on Main Menu screen)
     _videoIntro.Play();
   }
 

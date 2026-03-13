@@ -87,17 +87,6 @@ theme_override_styles/pressed = ExtResource("3_pressed")
 theme_override_styles/hover = ExtResource("4_hover")
 text = "Settings"
 
-[node name="RestartButton" type="Button" parent="MarginContainer/Foreground/VBoxContainer/ButtonContainer" unique_id=1954179570]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(350, 91)
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("2_normal")
-theme_override_styles/pressed = ExtResource("3_pressed")
-theme_override_styles/hover = ExtResource("4_hover")
-text = "Restart Game"
-
 [node name="QuitToMenuButton" type="Button" parent="MarginContainer/Foreground/VBoxContainer/ButtonContainer" unique_id=1762587969]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 91)

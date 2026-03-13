@@ -1,4 +1,5 @@
 using System;
+using com.forerunnergames.coa2.core;
 using com.forerunnergames.coa2.core.data;
 using com.forerunnergames.coa2.core.game;
 using com.forerunnergames.coa2.core.player;
@@ -7,7 +8,6 @@ using com.forerunnergames.coa2.tools.events;
 using com.forerunnergames.coa2.tools.events.args;
 using com.forerunnergames.coa2.ui.screens.context;
 using com.forerunnergames.coa2.ui.tooltips;
-using com.forerunnergames.coa2.utilities;
 using Godot;
 using NLog;
 using Logger = NLog.Logger;
@@ -25,6 +25,8 @@ public partial class GameScreen : Control, IScreen
   public GameSettings? CurrentGameSettings { get; private set; }
   private static readonly Logger Log = LogManager.GetCurrentClassLogger();
   private UI _ui = null!;
+  private World _world = null!;
+  private Player _player = null!;
   private PanelContainer _background = null!;
   private Label _debugLabel = null!;
   private Control _messageLabelContainer = null!;
@@ -32,20 +34,15 @@ public partial class GameScreen : Control, IScreen
   private Control _messageSpacerTop = null!;
   private Control _messageSpacerBottom = null!;
   private ScreenContext? _screenContext;
-  private bool _isEndingPlayerTurn;
   public Control AsControl() => this;
-  private TileMapLayer _rocksBg = null!;
-  private Player _player = null!;
   public void SetDebugText (string text) => _debugLabel.Text = text;
 
   public override void _Ready()
   {
     _ui = GetNode <UI> ("/root/UI");
-
-    _rocksBg = GetNode <TileMapLayer> ("%RocksBg");
+    _world = GetNode <World> ("World");
     _player = GetNode <Player> ("%Player");
     _debugLabel = GetNode <Label> ("%DebugLabel");
-
     _background = GetNode <PanelContainer> ("%Background");
     _messageLabelContainer = GetNode <Control> ("%MessageLabelContainer");
     _messageLabel = _messageLabelContainer.GetNode <RichTextLabel> ("MessageLabel");
@@ -58,17 +55,14 @@ public partial class GameScreen : Control, IScreen
 
   public override void _Input (InputEvent @event)
   {
-    // TODO FIXME
-    // var (mapCoords, terrain) = Tools.GetTileAt (ToLocal (_player.GlobalPosition), _rocksBg);
-    var (mapCoords, terrain) = Tools.GetTileAt (_player.GlobalPosition, _rocksBg);
-
-    var (mapCoords2, terrain2) = Tools.GetTileAt (GetLocalMousePosition(), _rocksBg);
-    SetDebugText ($"Mouse hovering Tile: {mapCoords2} ({terrain2}), Player: {mapCoords} ({terrain}), Local Mouse Coords: {GetLocalMousePosition()}");
+    var (mapCoords, terrain) = _world.GetTileAtWorldPosition (_player.GlobalPosition);
+    var (mapCoords2, terrain2) = _world.GetTileAtLocalMousePosition (GetLocalMousePosition());
+    SetDebugText ($"Mouse hovering Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse Coords: {GetLocalMousePosition()}");
     if (!Input.IsActionJustReleased ("click")) return;
     Log.Debug ("Player center is at: {mapCoords} ({terrain})", mapCoords, terrain);
     Log.Debug ("Clicked {mapCoords2} ({terrain2})", mapCoords2, terrain2);
-    _rocksBg.SetCell (mapCoords2); // TODO Testing tile mouse click detection.
-    SetDebugText ($"Mouse clicked Tile: {mapCoords2} ({terrain2}), Player: {mapCoords} ({terrain}), Local Mouse Coords: {GetLocalMousePosition()}");
+    _world.ClearTile (mapCoords2);
+    SetDebugText ($"Mouse clicked Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse Coords: {GetLocalMousePosition()}");
   }
 
   public override void _ExitTree()
@@ -94,10 +88,12 @@ public partial class GameScreen : Control, IScreen
     try
     {
       Log.Debug ("Game Over event received");
-      await ToSignal (GetTree(), SceneTree.SignalName.ProcessFrame); // Marshall back to the Godot thread from the C#'s event thread. Can't use CallDeferred due to lack of Variant-compatibility with ScreenContext.
-      Log.Trace ("ToSignal completed, transitioning to GameOver screen");
-      var screenContext = new ScreenContext { TransitionAction = Game.OnGameOver };
-      _ui.GoToScreen (ScreenId.GameOver, screenContext);
+
+      // TODO Implement game over visuals instead of going to game over screen.
+      // await ToSignal (GetTree(), SceneTree.SignalName.ProcessFrame); // Marshall back to the Godot thread from the C#'s event thread. Can't use CallDeferred due to lack of Variant-compatibility with ScreenContext.
+      // Log.Trace ("ToSignal completed, transitioning to GameOver screen");
+      // var screenContext = new ScreenContext { TransitionAction = Game.OnGameOver };
+      // _ui.GoToScreen (ScreenId.GameOver, screenContext);
     }
     catch (Exception ex)
     {

@@ -8,12 +8,16 @@
 script = ExtResource("1_x601d")
 
 [node name="PlayerAnimator" parent="." unique_id=2098798430 instance=ExtResource("2_jmcll")]
-DefaultFollowTargetPath = NodePath("../PlayerBody")
+unique_name_in_owner = true
+FollowTargetPath = NodePath("../PlayerBody")
 
 [node name="PlayerBody" parent="." unique_id=1720742404 node_paths=PackedStringArray("Animator") instance=ExtResource("2_dewec")]
+unique_name_in_owner = true
 collision_mask = 54
 Animator = NodePath("../PlayerAnimator")
-JumpVelocity = -850.0
+WalkSpeed = 480.0
+RunSpeed = 1400.0
+JumpVelocity = -3187.5
 
 [node name="ButterflyPerch" type="Marker2D" parent="." unique_id=1560668980 groups=["butterfly_perch"]]
-position = Vector2(0, -60)
+position = Vector2(0, -5)

@@ -10,7 +10,6 @@ public static class ScreenData
   private static readonly Dictionary <ScreenId, string> ScreenIdsToScenePaths = new()
   {
     { ScreenId.MainMenu, "res://ui/screens/mainmenu/MainMenuScreen.tscn" },
-    { ScreenId.Game, "res://ui/screens/game/GameScreen.tscn" },
-    { ScreenId.GameOver, "res://ui/screens/gameover/GameOverScreen.tscn" }
+    { ScreenId.Game, "res://ui/screens/game/GameScreen.tscn" }
   };
 }

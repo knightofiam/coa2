@@ -6,7 +6,7 @@ namespace com.forerunnergames.coa2.core.player;
 
 public partial class PlayerAnimator : Node2D
 {
-  [Export] public NodePath DefaultFollowTargetPath = null!;
+  [Export] public NodePath FollowTargetPath = null!;
   [Export] public float WalkSpeed = 120.0f;
   [Export] public float RunSpeed = 350.0f;
   [Export] public float WalkAnimationSpeed = 120.0f;
@@ -21,7 +21,7 @@ public partial class PlayerAnimator : Node2D
   [Export] public string CliffArrestingAnimation = "player_cliff_arresting";
   [Export] public string WalkLeftAnimation = "player_walking_left";
   [Export] public string RunLeftAnimation = "player_running_left";
-  public string CurrentAnimation => _primaryPlayer.CurrentAnimation;
+  public StringName CurrentAnimation => _primaryPlayer.CurrentAnimation;
   private static readonly Logger Log = LogManager.GetCurrentClassLogger();
   private AnimationPlayer _primaryPlayer = null!;
   private AnimationPlayer _secondaryPlayer = null!;
@@ -36,16 +36,15 @@ public partial class PlayerAnimator : Node2D
   {
     _primaryPlayer = GetNode <AnimationPlayer> ("%Primary");
     _secondaryPlayer = GetNode <AnimationPlayer> ("%Secondary");
-    _secondaryPlayer = null!;
-    _followTarget = GetNode <Node2D> (DefaultFollowTargetPath);
+    _followTarget = GetNode <Node2D> (FollowTargetPath);
     _primaryPlayer.AnimationFinished += OnAnimationFinished;
     _primaryPlayer.Play (IdleLeftAnimation);
   }
 
-  public override void _PhysicsProcess (double delta)
+  public void SyncToFollowTarget()
   {
-    GlobalRotation = _followTarget.GlobalRotation;
-    GlobalPosition = _followTarget.GlobalPosition + _visualOffset;
+    Rotation = _followTarget.Rotation;
+    Position = _followTarget.Position + _visualOffset;
   }
 
   public void Update (Vector2 currentVelocity, float hDirection = 0.0f, bool isSpeedBoosting = false, bool isOnFloor = false, bool landed = false, bool jumped = false)
@@ -60,7 +59,6 @@ public partial class PlayerAnimator : Node2D
     var speedScale = movementSpeed / animationSpeed;
     Scale = new Vector2 (facingRight ? -1 : 1, 1.0f);
     if (_primaryPlayer.CurrentAnimation == animationName && _primaryPlayer.IsPlaying()) return;
-    // if (animationName == IdleLeftAnimation && _primaryPlayer.IsPlaying() && (_primaryPlayer.CurrentAnimation == "land" || _primaryPlayer.CurrentAnimation == "jump")) return;
     _primaryPlayer.Play (animationName, customSpeed: speedScale);
     Log.Info ("Playing animation {animationName} at {speedScale:F1} speed", animationName, speedScale);
   }

@@ -28,6 +28,7 @@ public partial class PlayerBody : CharacterBody2D
   private bool _wasOnFloor;
   private Vector2 _previousVelocity = Vector2.Zero;
   public void SetBodyCollisionEnabled (bool enabled) => _collider.Disabled = !enabled;
+  public Vector2 GetSize() => _collider.Shape.GetRect().Size;
 
   public override void _Ready()
   {
@@ -37,8 +38,7 @@ public partial class PlayerBody : CharacterBody2D
   }
 
   public override void _PhysicsProcess (double delta)
-  {
-    var velocity = Velocity;
+  { var velocity = Velocity;
     var inputDirection = Input.GetVector ("move_left", "move_right", "move_up", "move_down");
     var jumpInput = Input.IsActionJustPressed ("jump");
     var speedBoostInput = Input.IsActionPressed ("speed_boost");
@@ -49,17 +49,18 @@ public partial class PlayerBody : CharacterBody2D
     var horizontalSpeed = inputDirection.X * (speedBoostInput ? RunSpeed : WalkSpeed);
     var horizontalVelocity = Mathf.MoveToward (velocity.X, horizontalSpeed, Acceleration * (float)delta);
     velocity.X = horizontalVelocity;
-    velocity.Y += fallVelocity * 2.0f;
+    velocity.Y += fallVelocity;
     velocity.Y = startJumping ? JumpVelocity : velocity.Y;
     Velocity = velocity;
     Animator.Update (Velocity, inputDirection.X, speedBoostInput, isOnFloor, landed, startJumping);
 
     // TODO FIXME
-    // .SetDebugText ($"Velocity: ({Velocity.X:F1}, {Velocity.Y:F1}), IsOnFloor: {isOnFloor}, Animation: {Animator.CurrentAnimation}");
+    // GetParent().GetNode <Label> ("%DebugLabel").SetText ($"Velocity: ({Velocity.X:F1}, {Velocity.Y:F1})\nIsOnFloor: {isOnFloor}\nAnimation: {Animator.CurrentAnimation}");
 
     _wasOnFloor = isOnFloor;
     _previousVelocity = Velocity;
     MoveAndSlide();
+    Animator.SyncToFollowTarget();
     HandleKinematicCollisions();
     HandleIceCollisions();
   }

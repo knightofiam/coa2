@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using com.forerunnergames.coa2.ui.audio.music;
-using com.forerunnergames.coa2.ui.screens;
 using Godot;
 using NLog;
 using Logger = NLog.Logger;
@@ -13,22 +12,16 @@ public static class MusicData
   private static readonly HashSet <string> ValidMusicExtensions = ["mp3", "wav", "ogg"];
   private static Dictionary <MusicId, AudioStream> _musicIdsToAudioStreams = null!;
   public static AudioStream? GetMusic (MusicId? musicId) => musicId.HasValue ? _musicIdsToAudioStreams.GetValueOrDefault (musicId.Value) : null;
-  public static MusicId? GetMusicId (ScreenId screenId) => ScreenIdsToMusicIds.GetValueOrDefault (screenId);
 
-  // TODO Add music files.
+  // @formatter:off
   private static readonly Dictionary <MusicId, string> MusicPaths = new()
   {
-    [MusicId.MainMenu] = "",
-    [MusicId.Game] = "",
+    [MusicId.MainMenu] = "res://assets/music/music2.wav",
+    [MusicId.Summer] = "res://assets/music/music5.wav",
+    [MusicId.Winter] = "res://assets/music/music6.wav",
     [MusicId.GameOver] = ""
   };
-
-  private static readonly Dictionary <ScreenId, MusicId> ScreenIdsToMusicIds = new()
-  {
-    [ScreenId.MainMenu] = MusicId.MainMenu,
-    [ScreenId.Game] = MusicId.Game,
-    [ScreenId.GameOver] = MusicId.GameOver
-  };
+  // @formatter:on
 
   public static void Load()
   {
