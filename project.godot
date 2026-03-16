@@ -25,8 +25,8 @@ UI="*uid://o0sau8othhqx"
 
 [display]
 
-window/size/viewport_width=3840
-window/size/viewport_height=2160
+window/size/viewport_width=1024
+window/size/viewport_height=768
 window/stretch/mode="viewport"
 window/dpi/allow_hidpi=false
 
@@ -37,10 +37,6 @@ project/assembly_name="coa2"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
-
-[gui]
-
-common/snap_controls_to_pixels=false
 
 [input]
 
@@ -132,6 +128,10 @@ common/physics_ticks_per_second=120
 
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+textures/default_filters/use_nearest_mipmap_filter=true
 textures/default_filters/anisotropic_filtering_level=0
+anti_aliasing/screen_space_roughness_limiter/enabled=false
 textures/decals/filter=0
 textures/light_projectors/filter=0
+2d/dpi/allow_hidpi=false
+2d/stretch/scale_mode="fractional"

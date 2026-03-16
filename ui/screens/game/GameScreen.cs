@@ -40,12 +40,12 @@ public partial class GameScreen : Control, IScreen
   public override void _Ready()
   {
     _ui = GetNode <UI> ("/root/UI");
-    _world = GetNode <World> ("World");
+    _world = GetNode <World> ("%World");
     _player = GetNode <Player> ("%Player");
     _debugLabel = GetNode <Label> ("%DebugLabel");
     _background = GetNode <PanelContainer> ("%Background");
     _messageLabelContainer = GetNode <Control> ("%MessageLabelContainer");
-    _messageLabel = _messageLabelContainer.GetNode <RichTextLabel> ("MessageLabel");
+    _messageLabel = _messageLabelContainer.GetNode <RichTextLabel> ("%MessageLabel");
     _messageSpacerTop = GetNode <Control> ("%MessageSpacerTop");
     _messageSpacerBottom = GetNode <Control> ("%MessageSpacerBottom");
     EventBus.Instance.GameOverEvent += OnGameOverEvent;
@@ -57,12 +57,12 @@ public partial class GameScreen : Control, IScreen
   {
     var (mapCoords, terrain) = _world.GetTileAtWorldPosition (_player.GlobalPosition);
     var (mapCoords2, terrain2) = _world.GetTileAtLocalMousePosition (GetLocalMousePosition());
-    SetDebugText ($"Mouse hovering Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse Coords: {GetLocalMousePosition()}");
+    SetDebugText ($"Hovering Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nMouse Local: {GetLocalMousePosition()}\nMouse Global: {GetGlobalMousePosition()}\nPlayer Global Position: {_player.GlobalPosition}");
     if (!Input.IsActionJustReleased ("click")) return;
     Log.Debug ("Player center is at: {mapCoords} ({terrain})", mapCoords, terrain);
     Log.Debug ("Clicked {mapCoords2} ({terrain2})", mapCoords2, terrain2);
     _world.ClearTile (mapCoords2);
-    SetDebugText ($"Mouse clicked Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse Coords: {GetLocalMousePosition()}");
+    SetDebugText ($"Clicked Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse: {GetLocalMousePosition()}");
   }
 
   public override void _ExitTree()

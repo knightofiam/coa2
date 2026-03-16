@@ -10,7 +10,6 @@ collision_mask = 38
 slide_on_ceiling = false
 platform_on_leave = 2
 script = ExtResource("1_jtg1l")
-Acceleration = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=725245432]
 position = Vector2(-2, 1)
@@ -39,10 +38,9 @@ target_position = Vector2(-15, -5.4299853e-05)
 collision_mask = 0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1516916712]
-offset = Vector2(0, -470)
+offset = Vector2(0, -208)
 process_callback = 0
-position_smoothing_speed = 20.0
-rotation_smoothing_speed = 100.0
+position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_top_margin = 0.25
 drag_bottom_margin = 0.59

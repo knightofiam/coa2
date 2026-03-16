@@ -3130,88 +3130,108 @@ libraries/ = SubResource("AnimationLibrary_ryc4p")
 visible = false
 texture = ExtResource("2_3w6v2")
 hframes = 42
+frame = 2
 
 [node name="boot-right" type="Sprite2D" parent="Sprites" unique_id=809162733]
 texture = ExtResource("3_axcc3")
 hframes = 42
+frame = 2
 
 [node name="body" type="Sprite2D" parent="Sprites" unique_id=1708955166]
 texture = ExtResource("4_dm7n6")
 hframes = 42
+frame = 2
 
 [node name="foot-left" type="Sprite2D" parent="Sprites" unique_id=499360886]
 visible = false
 texture = ExtResource("5_5j22u")
 hframes = 42
+frame = 2
 
 [node name="pants" type="Sprite2D" parent="Sprites" unique_id=351601327]
 texture = ExtResource("6_myqkd")
 hframes = 42
+frame = 2
 
 [node name="boot-left" type="Sprite2D" parent="Sprites" unique_id=558999287]
 texture = ExtResource("7_v3lte")
 hframes = 42
+frame = 2
 
 [node name="shirt" type="Sprite2D" parent="Sprites" unique_id=897536516]
 texture = ExtResource("8_k7ru3")
 hframes = 42
+frame = 2
 
 [node name="belt" type="Sprite2D" parent="Sprites" unique_id=236643776]
 texture = ExtResource("9_vk57q")
 hframes = 42
+frame = 2
 
 [node name="head-outline-rear" type="Sprite2D" parent="Sprites" unique_id=1516782242]
 texture = ExtResource("10_nv2pq")
 hframes = 42
+frame = 2
 
 [node name="hat-outline" type="Sprite2D" parent="Sprites" unique_id=1186821421]
 visible = false
 texture = ExtResource("11_g5sgt")
 hframes = 42
+frame = 2
 
 [node name="backpack" type="Sprite2D" parent="Sprites" unique_id=1157813794]
 texture = ExtResource("12_u7hdy")
 hframes = 42
+frame = 2
 
 [node name="backpack-straps" type="Sprite2D" parent="Sprites" unique_id=254342550]
 texture = ExtResource("13_h41y5")
 hframes = 42
+frame = 2
 
 [node name="head" type="Sprite2D" parent="Sprites" unique_id=519068243]
 texture = ExtResource("14_rcwsc")
 hframes = 42
+frame = 2
 
 [node name="hair" type="Sprite2D" parent="Sprites" unique_id=1043221463]
+z_index = 1
 texture = ExtResource("15_qixiv")
 hframes = 42
+frame = 2
 
 [node name="hat" type="Sprite2D" parent="Sprites" unique_id=400413869]
 visible = false
 texture = ExtResource("16_sr1rd")
 hframes = 42
+frame = 2
 
 [node name="item-in-backpack" type="Sprite2D" parent="Sprites" unique_id=83621455]
 position = Vector2(-0.125, 0)
 texture = ExtResource("17_io612")
 hframes = 42
+frame = 2
 
 [node name="scarf" type="Sprite2D" parent="Sprites" unique_id=1938008641]
 visible = false
 texture = ExtResource("18_24toa")
 hframes = 42
+frame = 2
 
 [node name="hand-right" type="Sprite2D" parent="Sprites" unique_id=1694456110]
 texture = ExtResource("19_pg6lj")
 hframes = 42
+frame = 2
 
 [node name="glove-right" type="Sprite2D" parent="Sprites" unique_id=617136136]
 visible = false
 texture = SubResource("CompressedTexture2D_prgg3")
 hframes = 42
+frame = 2
 
 [node name="item-in-hand" type="Sprite2D" parent="Sprites" unique_id=215425442]
 visible = false
-position = Vector2(1, 2)
+position = Vector2(1, 3)
 rotation = -0.34906584
 texture = ExtResource("20_p36q8")
 hframes = 42
@@ -3227,25 +3247,31 @@ frame = 6
 visible = false
 texture = ExtResource("21_l2gst")
 hframes = 42
+frame = 2
 
 [node name="shirt-sleeve-left" type="Sprite2D" parent="Sprites" unique_id=1178893571]
 texture = ExtResource("22_k1jt6")
 hframes = 42
+frame = 2
 
 [node name="hand-left" type="Sprite2D" parent="Sprites" unique_id=80605535]
 texture = ExtResource("23_vc3pg")
 hframes = 42
+frame = 2
 
 [node name="glove-left" type="Sprite2D" parent="Sprites" unique_id=1861703016]
 visible = false
 texture = ExtResource("24_3qbcj")
 hframes = 42
+frame = 2
 
 [node name="arm-right" type="Sprite2D" parent="Sprites" unique_id=2061615715]
 visible = false
 texture = ExtResource("25_ndsd7")
 hframes = 42
+frame = 2
 
 [node name="shirt-sleeve-right" type="Sprite2D" parent="Sprites" unique_id=175873677]
 texture = ExtResource("26_tfrdv")
 hframes = 42
+frame = 2

@@ -29,23 +29,25 @@ mouse_filter = 1
 
 [node name="World" parent="." unique_id=610440242 instance=ExtResource("4_jvj7m")]
 unique_name_in_owner = true
-scale = Vector2(24, 24)
+scale = Vector2(8, 8)
 
 [node name="Player" parent="." unique_id=316622296 instance=ExtResource("3_xhv1c")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(0, -24)
-scale = Vector2(24, 24)
-SpawnPosition = Vector2(0, -5200)
+scale = Vector2(8, 8)
+SpawnPosition = Vector2(0, -1800)
 
 [node name="DebugLabel" type="Label" parent="Player" unique_id=1959599220]
 unique_name_in_owner = true
+visible = false
 z_index = 100
 offset_left = 2.0833333
 offset_top = -8.874999
 offset_right = 301.08334
 offset_bottom = 60.125
 scale = Vector2(0.042, 0.042)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 50
 text = "Debug Label"
 
@@ -56,6 +58,10 @@ z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -335.0
+offset_top = -208.5
+offset_right = 335.0
+offset_bottom = 208.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
