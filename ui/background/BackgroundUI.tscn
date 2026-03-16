@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://bu46md1atjiyh"]
 
-[node name="Background" type="CanvasLayer" unique_id=1363063398]
+[ext_resource type="Script" uid="uid://hgqgpgvdqncy" path="res://ui/background/BackgroundUI.cs" id="1_tk0ko"]
+
+[node name="BackgroundUI" type="CanvasLayer" unique_id=1363063398]
+script = ExtResource("1_tk0ko")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1839902435]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

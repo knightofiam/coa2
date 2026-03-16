@@ -13,6 +13,7 @@ using com.forerunnergames.coa2.ui.dialogs.pause;
 using com.forerunnergames.coa2.ui.dialogs.settings;
 using com.forerunnergames.coa2.ui.loading;
 using com.forerunnergames.coa2.ui.messages;
+using com.forerunnergames.coa2.ui.screens.game;
 using com.forerunnergames.coa2.ui.topbar;
 using Godot;
 using NLog;
@@ -54,6 +55,7 @@ public partial class UI : Control
   public void TogglePauseDialog (Action? onResume = null, Action? onQuitToMenu = null) => _pauseDialog.Toggle (onResume, onQuitToMenu);
   public void ToggleSettingsDialog() => _settingsDialog.Toggle (_screenManager.GetCurrentGameSettings());
   public void ShakeScreen (float intensity, float durationSeconds) => _screenManager.ShakeCurrentScreen (intensity, durationSeconds);
+  public void SetDebugText (string text) => (_screenManager.GetCurrentScreen() as GameScreen)?.SetDebugText (text);
   public static void AddGameMessage (string text, float durationSeconds = 0.0f, Action? onShow = null, Action? onComplete = null) => EventBus.Emit (new GameMessageRequestEventArgs (new GameMessage (text, durationSeconds, onShow, onComplete)));
   private void OnSettingsButtonPressed() => ToggleSettingsDialog();
 

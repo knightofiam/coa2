@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cvsqoi875uw6k"]
 
-[ext_resource type="Script" uid="uid://dyemsa3biqqvf" path="res://core/World.cs" id="1_u6prc"]
+[ext_resource type="Script" uid="uid://dyemsa3biqqvf" path="res://ui/world/WorldView.cs" id="1_d4162"]
 [ext_resource type="TileSet" uid="uid://by0xgvrr7d7km" path="res://assets/resources/CliffsTileSet.tres" id="2_d4162"]
 [ext_resource type="TileSet" uid="uid://dlc6275iw5pus" path="res://assets/resources/ObjectsTileSet.tres" id="3_ywcf5"]
 
@@ -13,8 +13,8 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30t30"]
 normal = Vector2(-1, 0)
 
-[node name="World" type="Node2D" unique_id=610440242]
-script = ExtResource("1_u6prc")
+[node name="WorldView" type="Node2D" unique_id=610440242]
+script = ExtResource("1_d4162")
 
 [node name="Summer" type="Node2D" parent="." unique_id=2086816344]
 

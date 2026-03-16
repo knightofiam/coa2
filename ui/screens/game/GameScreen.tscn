@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://di5ddlydbscgq"]
 
 [ext_resource type="Script" uid="uid://qjqgs2cbjvfy" path="res://ui/screens/game/GameScreen.cs" id="1_eff0r"]
-[ext_resource type="PackedScene" uid="uid://cibydvnhc6cyx" path="res://core/player/Player.tscn" id="3_xhv1c"]
-[ext_resource type="PackedScene" uid="uid://cvsqoi875uw6k" path="res://core/World.tscn" id="4_jvj7m"]
+[ext_resource type="PackedScene" uid="uid://dryakd6fp1gvb" path="res://ui/game/GameView.tscn" id="2_xhv1c"]
+[ext_resource type="Script" uid="uid://0ir1cbabd2r" path="res://ui/game/GameView.cs" id="3_jvj7m"]
 [ext_resource type="PackedScene" uid="uid://cpycrsitx3uc3" path="res://ui/game/messages/GameMessagesView.tscn" id="5_3m78j"]
 
 [node name="GameScreen" type="Control" unique_id=2093526013]
@@ -15,7 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_eff0r")
 
 [node name="BackgroundUI" type="CanvasLayer" parent="." unique_id=68004241]
-layer = -1
+layer = -10
 visible = false
 
 [node name="Background" type="PanelContainer" parent="BackgroundUI" unique_id=2091153290]
@@ -27,31 +27,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="World" parent="." unique_id=610440242 instance=ExtResource("4_jvj7m")]
+[node name="GameView" parent="." unique_id=77851796 instance=ExtResource("2_xhv1c")]
 unique_name_in_owner = true
-scale = Vector2(8, 8)
-
-[node name="Player" parent="." unique_id=316622296 instance=ExtResource("3_xhv1c")]
-unique_name_in_owner = true
-z_index = 5
-scale = Vector2(8, 8)
-SpawnPosition = Vector2(0, -1800)
-
-[node name="DebugLabel" type="Label" parent="Player" unique_id=1959599220]
-unique_name_in_owner = true
-visible = false
-z_index = 100
-offset_left = 2.0833333
-offset_top = -8.874999
-offset_right = 301.08334
-offset_bottom = 60.125
-scale = Vector2(0.042, 0.042)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 50
-text = "Debug Label"
+layer = 0
+script = ExtResource("3_jvj7m")
 
 [node name="ForegroundUI" type="CanvasLayer" parent="." unique_id=918898438]
+layer = 10
 
 [node name="Foreground" type="MarginContainer" parent="ForegroundUI" unique_id=665135871]
 z_index = 100
@@ -93,11 +75,11 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39607844)
-theme_override_constants/shadow_outline_size = 20
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 96
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]Game Message[/center]"
 fit_content = true
@@ -111,3 +93,19 @@ layout_mode = 2
 [node name="GameMessagesView" parent="ForegroundUI" unique_id=1751482918 instance=ExtResource("5_3m78j")]
 unique_name_in_owner = true
 z_index = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="ForegroundUI" unique_id=1705980684]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="DebugLabel" type="Label" parent="ForegroundUI/MarginContainer" unique_id=1330014539]
+unique_name_in_owner = true
+z_index = 100
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Debug Label"

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dryakd6fp1gvb"]
+
+[ext_resource type="PackedScene" uid="uid://cvsqoi875uw6k" path="res://ui/world/WorldView.tscn" id="1_3ngdl"]
+[ext_resource type="PackedScene" uid="uid://b4pknbk3nohjh" path="res://core/player/Player.tscn" id="3_ej1ch"]
+[ext_resource type="PackedScene" uid="uid://dpou1aajk4btf" path="res://ui/player/PlayerView.tscn" id="3_vk1so"]
+
+[node name="GameView" type="CanvasLayer" unique_id=77851796]
+follow_viewport_enabled = true
+
+[node name="WorldView" parent="." unique_id=610440242 instance=ExtResource("1_3ngdl")]
+unique_name_in_owner = true
+scale = Vector2(8, 8)
+
+[node name="PlayerView" parent="." unique_id=657816127 instance=ExtResource("3_vk1so")]
+unique_name_in_owner = true
+z_index = 5
+scale = Vector2(8, 8)
+
+[node name="Player" parent="." unique_id=865995953 instance=ExtResource("3_ej1ch")]
+unique_name_in_owner = true
+scale = Vector2(8, 8)
+collision_mask = 54

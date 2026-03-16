@@ -1,6 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 using System.Linq;
+using com.forerunnergames.coa2.core.player;
 
 namespace com.forerunnergames.coa2.core.butterflies;
 
@@ -76,7 +77,7 @@ public partial class Butterfly : Node2D
 
   private void OnThreatDetected (Node2D body)
   {
-    if (!body.HasMeta ("is_player")) return; // Check if it's the player and if the player is moving
+    if (body is not Player) return; // Check if it's the player and if the player is moving
     var velocity = body.Get ("Velocity").AsVector2();
     if (!(velocity.LengthSquared() > 1.0f)) return; // Player is moving
     if (_currentState == ButterflyState.Evading) return;

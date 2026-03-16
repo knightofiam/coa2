@@ -28,7 +28,7 @@ public partial class ScreenManager : Node
   public bool IsCurrent (ScreenId screenId) => GetCurrentScreen()?.ScreenId == screenId;
   public void GoTo (ScreenId screenId, ScreenContext? screenContext = null, bool fade = true, float? fadeInDuration = null, float? fadeOutDuration = null, MusicId? nextMusicTrack = null) => _ = GoToScreenAsync (screenId, screenContext, fade, fadeInDuration, fadeOutDuration, nextMusicTrack);
   public void ShakeCurrentScreen (float intensity, float durationSeconds) => _screenShakeEffect.Play (GetCurrentScreen()?.AsControl(), intensity, durationSeconds);
-  private IScreen? GetCurrentScreen() => GetTree().GetCurrentScene() as IScreen;
+  public IScreen? GetCurrentScreen() => GetTree().GetCurrentScene() as IScreen;
   private static bool IsScenePathValid (string? scenePath) => scenePath != null && ResourceLoader.Exists (scenePath) && scenePath.EndsWith (".tscn");
 
   public override void _Ready()

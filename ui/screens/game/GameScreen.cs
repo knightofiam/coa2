@@ -1,11 +1,10 @@
 using System;
-using com.forerunnergames.coa2.core;
 using com.forerunnergames.coa2.core.data;
 using com.forerunnergames.coa2.core.game;
-using com.forerunnergames.coa2.core.player;
 using com.forerunnergames.coa2.core.settings;
 using com.forerunnergames.coa2.tools.events;
 using com.forerunnergames.coa2.tools.events.args;
+using com.forerunnergames.coa2.ui.background;
 using com.forerunnergames.coa2.ui.screens.context;
 using com.forerunnergames.coa2.ui.tooltips;
 using Godot;
@@ -25,8 +24,7 @@ public partial class GameScreen : Control, IScreen
   public GameSettings? CurrentGameSettings { get; private set; }
   private static readonly Logger Log = LogManager.GetCurrentClassLogger();
   private UI _ui = null!;
-  private World _world = null!;
-  private Player _player = null!;
+  private GameView _gameView = null!;
   private PanelContainer _background = null!;
   private Label _debugLabel = null!;
   private Control _messageLabelContainer = null!;
@@ -40,8 +38,7 @@ public partial class GameScreen : Control, IScreen
   public override void _Ready()
   {
     _ui = GetNode <UI> ("/root/UI");
-    _world = GetNode <World> ("%World");
-    _player = GetNode <Player> ("%Player");
+    _gameView = GetNode <GameView> ("%GameView");
     _debugLabel = GetNode <Label> ("%DebugLabel");
     _background = GetNode <PanelContainer> ("%Background");
     _messageLabelContainer = GetNode <Control> ("%MessageLabelContainer");
@@ -53,22 +50,15 @@ public partial class GameScreen : Control, IScreen
     Log.Debug ("Loaded {name} Screen", Name);
   }
 
-  public override void _Input (InputEvent @event)
-  {
-    var (mapCoords, terrain) = _world.GetTileAtWorldPosition (_player.GlobalPosition);
-    var (mapCoords2, terrain2) = _world.GetTileAtLocalMousePosition (GetLocalMousePosition());
-    SetDebugText ($"Hovering Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nMouse Local: {GetLocalMousePosition()}\nMouse Global: {GetGlobalMousePosition()}\nPlayer Global Position: {_player.GlobalPosition}");
-    if (!Input.IsActionJustReleased ("click")) return;
-    Log.Debug ("Player center is at: {mapCoords} ({terrain})", mapCoords, terrain);
-    Log.Debug ("Clicked {mapCoords2} ({terrain2})", mapCoords2, terrain2);
-    _world.ClearTile (mapCoords2);
-    SetDebugText ($"Clicked Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse: {GetLocalMousePosition()}");
-  }
-
   public override void _ExitTree()
   {
     EventBus.Instance.GameOverEvent -= OnGameOverEvent;
     TooltipManager.HideTooltip(); // Hide any active tooltips when leaving game screen
+  }
+
+  public override void _UnhandledInput (InputEvent @event)
+  {
+    _gameView.HandleInput (@event);
   }
 
   // ReSharper disable once AsyncVoidMethod

@@ -1,0 +1,13 @@
+-10 Current Screen Background UI
+0 	World View
+5   Player View
+10	Current Screen Foreground UI
+91	Top Bar
+92  Pause Dialog
+93	Settings Dialog
+94	Custom Confirmation Dialog
+95	Screen Fade
+96	Screen Fade Exclusions
+97	Video Intro
+98	Error Dialog
+99	Custom Tooltip

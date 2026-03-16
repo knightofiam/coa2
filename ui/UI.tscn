@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cfr32kdsy1hyc" path="res://ui/UI.cs" id="1_xmm75"]
 [ext_resource type="PackedScene" uid="uid://b1k4naeordxhj" path="res://ui/screens/manager/ScreenManager.tscn" id="2_hxwew"]
 [ext_resource type="StyleBox" uid="uid://ck3hccvaflkk0" path="res://assets/resources/controls/buttons/default-button-pressed-style.tres" id="2_s15di"]
-[ext_resource type="PackedScene" uid="uid://bu46md1atjiyh" path="res://ui/Background.tscn" id="3_3bffh"]
+[ext_resource type="PackedScene" uid="uid://bu46md1atjiyh" path="res://ui/background/BackgroundUI.tscn" id="3_3bffh"]
 [ext_resource type="PackedScene" uid="uid://kuqdhcwh6u50" path="res://ui/topBar/TopBar.tscn" id="3_u132g"]
 [ext_resource type="PackedScene" uid="uid://bkqiyyavr0dsc" path="res://ui/dialogs/settings/SettingsDialog.tscn" id="5_16sqb"]
 [ext_resource type="PackedScene" uid="uid://bj7ukvlc8cm8p" path="res://ui/dialogs/error/ErrorDialog.tscn" id="5_a6px5"]
@@ -25,7 +25,7 @@ grow_vertical = 2
 script = ExtResource("1_xmm75")
 ScreenNavigationButtonStyle = ExtResource("2_s15di")
 
-[node name="Background" parent="." unique_id=1363063398 instance=ExtResource("3_3bffh")]
+[node name="BackgroundUI" parent="." unique_id=1363063398 instance=ExtResource("3_3bffh")]
 unique_name_in_owner = true
 layer = -1
 
@@ -63,13 +63,13 @@ unique_name_in_owner = true
 layer = 99
 visible = false
 
+[node name="AudioManager" parent="." unique_id=136984518 instance=ExtResource("13_audio")]
+unique_name_in_owner = true
+
 [node name="ScreenManager" parent="." unique_id=268094284 instance=ExtResource("2_hxwew")]
 unique_name_in_owner = true
 
 [node name="LoadingManager" parent="." unique_id=2132277591 instance=ExtResource("14_loading")]
-unique_name_in_owner = true
-
-[node name="AudioManager" parent="." unique_id=136984518 instance=ExtResource("13_audio")]
 unique_name_in_owner = true
 
 [node name="GodotThreadBridge" parent="." unique_id=572066969 instance=ExtResource("14_3bffh")]
