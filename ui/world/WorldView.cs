@@ -24,11 +24,11 @@ public partial class WorldView : Node2D
   {
     var (mapCoords, terrain) = GetTileAtWorldPosition (playerWorldPosition);
     var (mapCoords2, terrain2) = GetTileAtLocalMousePosition (GetLocalMousePosition());
-    _ui.SetDebugText ($"Hovering Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nMouse Local: {GetLocalMousePosition()}\nMouse Global: {GetGlobalMousePosition()}\nPlayer World Position: {playerWorldPosition}");
+    // _ui.SetDebugText ($"Hovering Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nMouse Local: {GetLocalMousePosition()}\nMouse Global: {GetGlobalMousePosition()}\nPlayer World Position: {playerWorldPosition}");
     if (!Input.IsActionJustReleased ("click")) return;
     Log.Debug ("Player center is at: {mapCoords} ({terrain})", mapCoords, terrain);
     Log.Debug ("Clicked {mapCoords2} ({terrain2})", mapCoords2, terrain2);
     ClearTile (mapCoords2);
-    _ui.SetDebugText ($"Clicked Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse: {GetLocalMousePosition()}");
+    // _ui.SetDebugText ($"Clicked Tile: {mapCoords2} ({terrain2})\nPlayer: {mapCoords} ({terrain})\nLocal Mouse: {GetLocalMousePosition()}");
   }
 }

@@ -12,11 +12,13 @@ platform_on_leave = 2
 script = ExtResource("1_jtg1l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=725245432]
+unique_name_in_owner = true
 z_index = 6
 position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_h7afp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1516916712]
+unique_name_in_owner = true
 offset = Vector2(0, -208)
 process_callback = 0
 position_smoothing_speed = 10.0
@@ -25,18 +27,21 @@ drag_top_margin = 0.25
 drag_bottom_margin = 0.59
 
 [node name="RayCast2D1" type="RayCast2D" parent="." unique_id=357425521]
+unique_name_in_owner = true
 z_index = 6
 rotation = 1.5708
 target_position = Vector2(0, 13)
 collision_mask = 0
 
 [node name="RayCast2D2" type="RayCast2D" parent="." unique_id=1218823050]
+unique_name_in_owner = true
 z_index = 6
 rotation = -1.5708
 target_position = Vector2(0, 13)
 collision_mask = 0
 
 [node name="RayCast2D3" type="RayCast2D" parent="." unique_id=390690338]
+unique_name_in_owner = true
 z_index = 6
 position = Vector2(0, 1)
 rotation = 1.5708
@@ -45,6 +50,7 @@ target_position = Vector2(-14, 0)
 collision_mask = 0
 
 [node name="RayCast2D4" type="RayCast2D" parent="." unique_id=1330331054]
+unique_name_in_owner = true
 z_index = 6
 rotation = -1.5708
 target_position = Vector2(-15, -5.4299853e-05)
@@ -54,6 +60,7 @@ collision_mask = 0
 position = Vector2(0, -5)
 
 [node name="IceTimer" type="Timer" parent="." unique_id=341162050]
+unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.25
 one_shot = true

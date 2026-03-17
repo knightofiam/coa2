@@ -84,17 +84,8 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=975020765]
 custom_minimum_size = Vector2(2880, 1620)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1440.0
-offset_top = -1070.5
-offset_right = 1440.0
-offset_bottom = 1070.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 2880.0
+offset_bottom = 2141.0
 
 [node name="Background" type="PanelContainer" parent="MarginContainer" unique_id=1603452611]
 layout_mode = 2

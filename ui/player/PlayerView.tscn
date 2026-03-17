@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bssxm4eyv0t6v" path="res://assets/images/klas/head.png" id="14_xg38c"]
 [ext_resource type="Texture2D" uid="uid://c0htmhiun37rx" path="res://assets/images/klas/hair.png" id="15_tyeqh"]
 [ext_resource type="Texture2D" uid="uid://n1vsykqnl5on" path="res://assets/images/klas/hat.png" id="16_kjh47"]
+[ext_resource type="Script" uid="uid://b3ryx6662un4q" path="res://ui/player/PlayerSprite.cs" id="16_njfk1"]
 [ext_resource type="Texture2D" uid="uid://bvuev81fst8qh" path="res://assets/images/klas/item-in-backpack.png" id="17_ua14l"]
 [ext_resource type="Texture2D" uid="uid://clfviudxnhosx" path="res://assets/images/klas/scarf.png" id="18_4mnbq"]
 [ext_resource type="Texture2D" uid="uid://cfjmagu5q03e5" path="res://assets/images/klas/hand-right.png" id="19_1j2nl"]
@@ -3125,6 +3126,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ryc4p")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=28846847]
+unique_name_in_owner = true
 
 [node name="foot-right" type="Sprite2D" parent="Sprites" unique_id=346610198]
 visible = false
@@ -3199,6 +3201,7 @@ z_index = 1
 texture = ExtResource("15_tyeqh")
 hframes = 42
 frame = 2
+script = ExtResource("16_njfk1")
 
 [node name="hat" type="Sprite2D" parent="Sprites" unique_id=400413869]
 visible = false

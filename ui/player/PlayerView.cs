@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using com.forerunnergames.coa2.core.player;
 using Godot;
 using NLog;
 using Logger = NLog.Logger;
@@ -27,6 +30,7 @@ public partial class PlayerView : Node2D
   private AnimationPlayer _primaryPlayer = null!;
   private AnimationPlayer _secondaryPlayer = null!;
   private Vector2 _visualOffset = Vector2.Zero;
+  private List <Sprite2D> _sprites = null!;
   private bool _wasOnFloor;
   public void ResetVisualOffset() => _visualOffset = Vector2.Zero;
   private void OnAnimationFinished (StringName animationName) => Log.Info ("Animation ended: {animationName}", animationName);
@@ -36,15 +40,28 @@ public partial class PlayerView : Node2D
     _ui = GetNode <UI> ("/root/UI");
     _primaryPlayer = GetNode <AnimationPlayer> ("%Primary");
     _secondaryPlayer = GetNode <AnimationPlayer> ("%Secondary");
+    _sprites = GetNode <Node2D> ("%Sprites").GetChildren().ToList().OfType <Sprite2D>().ToList();
     _primaryPlayer.AnimationFinished += OnAnimationFinished;
     _primaryPlayer.Play (IdleLeftAnimation);
   }
 
   // TODO Implement clicking on player to equip/unequip
-  public void HandleInput (InputEvent @event)
+  public bool HandleInput (InputEvent @event)
   {
-    if (@event is not InputEventMouseButton { ButtonIndex: MouseButton.Left } click) return;
-    _ui.SetDebugText ($"Clicked player at global position: {click.GlobalPosition}, local position: {ToLocal (click.Position)}");
+    // if (@event is not InputEventMouseButton { ButtonIndex: MouseButton.Left } click) return false;
+    // if (@event is not InputEventMouseMotion click) return false;
+    // if (!HasLocalPoint (ToLocal (click.GlobalPosition))) return false;
+    // _ui.SetDebugText ($"Clicked player at global position: {click.GlobalPosition}, local position: {ToLocal (click.Position)}");
+    return true;
+  }
+
+  public bool HasLocalPoint (Vector2 localPoint)
+  {
+    var visibleSprites = _sprites.Where (s => s.Visible).ToList ();
+    // visibleSprites.ForEach (s => GD.Print ($"Visible sprite: {s.Name}, Local rect: {s.GetRect()}, World rect: {new Rect2 (ToGlobal (Position + s.GetRect().Position), ToGlobal (s.GetRect().Size))}, World point: {localPoint}, world point to local: {ToLocal (localPoint)}, has point: {s.GetRect().HasPoint (ToLocal (localPoint))}"));
+    // visibleSprites.ForEach (s => GD.Print ($"Visible sprite: {s.Name}, Local Rect: {new Rect2 (s.GetRect().Position * 8, s.GetRect().Size * 8)}, local point: {worldPoint}, has point: {new Rect2 (s.GetRect().Position * 8, s.GetRect().Size * 8).HasPoint (worldPoint)}"));
+    // visibleSprites.ForEach (s => GD.Print ($"Visible sprite: {s.Name}, Sprite global position: {s.GlobalPosition}, Global rect: {new Rect2 (s.GetRect())}, local point: {s.ToLocal (localPoint)}, has point: {s.GetRect().HasPoint (localPoint)}"));
+    return _sprites.Where (s => s.Visible).Any (s => s.GetRect().HasPoint (localPoint));
   }
 
   public void SyncToFollowTarget()

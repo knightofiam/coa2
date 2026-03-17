@@ -22,8 +22,8 @@ public partial class GameView : CanvasLayer
 
   public void HandleInput (InputEvent @event)
   {
-    _worldView.HandleInput (@event, playerWorldPosition: _player.GlobalPosition);
-    _playerView.HandleInput (@event);
-    _player.HandleInput (@event);
+    // if (_player.HandleInput (@event)) return;
+    // if (_playerView.HandleInput (@event)) return;
+    // _worldView.HandleInput (@event, playerWorldPosition: _player.GlobalPosition);
   }
 }

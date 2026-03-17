@@ -32,14 +32,13 @@ public partial class Player : CharacterBody2D
   private bool _wasOnFloor;
   private bool _justSlippedOnIce;
   public void SetBodyCollisionEnabled (bool enabled) => _collider.Disabled = !enabled;
-  public Vector2 GetSize() => _collider.Shape.GetRect().Size;
 
   public override void _Ready()
   {
     _ui = GetNode <UI> ("/root/UI");
-    _collider = GetNode <CollisionShape2D> ("CollisionShape2D");
-    _iceTimer = GetNode <Timer> ("IceTimer");
-    for (var i = 1; i <= 4; ++i) _rays.Add (GetNode <RayCast2D> ("RayCast2D" + i));
+    _collider = GetNode <CollisionShape2D> ("%CollisionShape2D");
+    _iceTimer = GetNode <Timer> ("%IceTimer");
+    for (var i = 1; i <= 4; ++i) _rays.Add (GetNode <RayCast2D> ("%RayCast2D" + i));
   }
 
   public override void _PhysicsProcess (double delta)
@@ -72,9 +71,11 @@ public partial class Player : CharacterBody2D
     HandleIceCollisions();
   }
 
-  public void HandleInput (InputEvent @event)
+  public bool HandleInput (InputEvent @event)
   {
-    if (Input.IsActionJustPressed ("respawn")) Respawn();
+    if (!Input.IsActionJustPressed ("respawn")) return false;
+    Respawn();
+    return true;
   }
 
   private void Respawn()
