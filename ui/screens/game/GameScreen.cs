@@ -4,7 +4,6 @@ using com.forerunnergames.coa2.core.game;
 using com.forerunnergames.coa2.core.settings;
 using com.forerunnergames.coa2.tools.events;
 using com.forerunnergames.coa2.tools.events.args;
-using com.forerunnergames.coa2.ui.background;
 using com.forerunnergames.coa2.ui.screens.context;
 using com.forerunnergames.coa2.ui.tooltips;
 using Godot;

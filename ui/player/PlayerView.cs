@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using com.forerunnergames.coa2.core.player;
 using Godot;
 using NLog;
 using Logger = NLog.Logger;

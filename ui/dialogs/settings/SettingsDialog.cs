@@ -47,8 +47,6 @@ public partial class SettingsDialog : CanvasLayer
   private void UpdateMusicLabel() => _musicVolumeLabel.Text = _musicVolumeMuteCheckBox.ButtonPressed ? "Muted" : $"{Mathf.RoundToInt (_musicVolumeSlider.Value)}%";
   private bool CurrentGameSettingsChanged() => _currentGameSettings.HasValue && _currentGameSettings.Value != Settings.GameSettingsSnapshot;
   private static List <ScreenId> GetScreenIds() => Enum.GetValues <ScreenId>().ToList();
-  private static int AsHumanPlayersDropDownIndex (int humanPlayerCount) => humanPlayerCount;
-  private static int AsHumanPlayers (int humanPlayersDropDownIndex) => humanPlayersDropDownIndex;
 
   private static readonly Dictionary <string, Action <bool>> CheckboxActions = new()
   {
