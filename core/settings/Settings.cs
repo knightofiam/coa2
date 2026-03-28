@@ -29,7 +29,7 @@ public class Settings
   // ReSharper restore RedundantDefaultMemberInitializer
   [JsonConverter (typeof (JsonStringEnumConverter))]
   public ScreenId? StartScreen { get; set; }
-  public string ConsoleLogLevel { get; set; } = "Info"; // Off, Trace, Debug, Info, Warn, Error, Fatal
+  public string ConsoleLogLevel { get; set; } = "Trace"; // Off, Trace, Debug, Info, Warn, Error, Fatal
   private static readonly Logger Log = LogManager.GetCurrentClassLogger();
   private static readonly string SettingsFilePath = Path.Combine (OS.GetUserDataDir(), "settings.json");
   private static Settings? _instance;
@@ -123,7 +123,7 @@ public class Settings
       level = Logging.DefaultLogLevel;
     }
 
-    Log.Info ("Changing console log level to: {logLevel}", level);
-    Logging.SetMinConsoleLogLevel (level);
+    // Logging.SetMinConsoleLogLevel (level);
+    Log.Info ("Changed console log level to: {logLevel}", level);
   }
 }

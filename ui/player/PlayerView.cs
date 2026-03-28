@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using com.forerunnergames.coa2.tools;
+using com.forerunnergames.coa2.tools.events;
+using com.forerunnergames.coa2.tools.events.args;
+using com.forerunnergames.coa2.utilities;
 using Godot;
 using NLog;
 using Logger = NLog.Logger;
@@ -29,19 +33,25 @@ public partial class PlayerView : Node2D
   private AnimationPlayer _primaryPlayer = null!;
   private AnimationPlayer _secondaryPlayer = null!;
   private Vector2 _visualOffset = Vector2.Zero;
-  private List <Sprite2D> _sprites = null!;
+  private List <PlayerSprite> _sprites = null!;
+  private readonly List <PlayerSprite> _hoveredSprites = [];
   private bool _wasOnFloor;
+  public override void _ExitTree() => EventBus.Instance.PrimaryAnimationEndedEvent -= OnPrimaryAnimationEndedEvent;
   public void ResetVisualOffset() => _visualOffset = Vector2.Zero;
-  private void OnAnimationFinished (StringName animationName) => Log.Info ("Animation ended: {animationName}", animationName);
+  public bool HasLocalPoint (Vector2 localPoint) => _sprites.Where (s => s.Visible).Any (s => s.GetRect().HasPoint (localPoint));
+  private static void OnPrimaryAnimationEndedEvent (object? sender, PrimaryAnimationEndedEventArgs e) => Log.Info ("Primary animation ended: {animationName}, was looping: {isLooping}", e.AnimationName, e.WasLooping);
 
   public override void _Ready()
   {
     _ui = GetNode <UI> ("/root/UI");
     _primaryPlayer = GetNode <AnimationPlayer> ("%Primary");
     _secondaryPlayer = GetNode <AnimationPlayer> ("%Secondary");
-    _sprites = GetNode <Node2D> ("%Sprites").GetChildren().ToList().OfType <Sprite2D>().ToList();
-    _primaryPlayer.AnimationFinished += OnAnimationFinished;
-    _primaryPlayer.Play (IdleLeftAnimation);
+    _sprites = GetNode <Node2D> ("%Sprites").GetChildren().ToList().OfType <PlayerSprite>().ToList();
+    _sprites.ForEach (s => s.Hovered += OnPlayerSpriteHovered);
+    _sprites.ForEach (s => s.Unhovered += OnPlayerSpriteUnhovered);
+    EventBus.Instance.PrimaryAnimationEndedEvent += OnPrimaryAnimationEndedEvent;
+    // _primaryPlayer.Play (IdleLeftAnimation); // TODO Restore
+    _primaryPlayer.Play (CliffHangingAnimation); // TODO Testing, remove
   }
 
   // TODO Implement clicking on player to equip/unequip
@@ -52,15 +62,6 @@ public partial class PlayerView : Node2D
     // if (!HasLocalPoint (ToLocal (click.GlobalPosition))) return false;
     // _ui.SetDebugText ($"Clicked player at global position: {click.GlobalPosition}, local position: {ToLocal (click.Position)}");
     return true;
-  }
-
-  public bool HasLocalPoint (Vector2 localPoint)
-  {
-    var visibleSprites = _sprites.Where (s => s.Visible).ToList ();
-    // visibleSprites.ForEach (s => GD.Print ($"Visible sprite: {s.Name}, Local rect: {s.GetRect()}, World rect: {new Rect2 (ToGlobal (Position + s.GetRect().Position), ToGlobal (s.GetRect().Size))}, World point: {localPoint}, world point to local: {ToLocal (localPoint)}, has point: {s.GetRect().HasPoint (ToLocal (localPoint))}"));
-    // visibleSprites.ForEach (s => GD.Print ($"Visible sprite: {s.Name}, Local Rect: {new Rect2 (s.GetRect().Position * 8, s.GetRect().Size * 8)}, local point: {worldPoint}, has point: {new Rect2 (s.GetRect().Position * 8, s.GetRect().Size * 8).HasPoint (worldPoint)}"));
-    // visibleSprites.ForEach (s => GD.Print ($"Visible sprite: {s.Name}, Sprite global position: {s.GlobalPosition}, Global rect: {new Rect2 (s.GetRect())}, local point: {s.ToLocal (localPoint)}, has point: {s.GetRect().HasPoint (localPoint)}"));
-    return _sprites.Where (s => s.Visible).Any (s => s.GetRect().HasPoint (localPoint));
   }
 
   public void SyncToFollowTarget()
@@ -74,6 +75,7 @@ public partial class PlayerView : Node2D
     var isIdle = isOnFloor && !jumped && currentVelocity.Length() < 1.0f;
     var isWalking = isOnFloor && !isIdle && !jumped && !isSpeedBoosting;
     var isRunning = isOnFloor && !isIdle && !jumped && isSpeedBoosting;
+    // var hasAnimation = _primaryPlayer.CurrentAnimation != "" && _primaryPlayer.IsPlaying();
     var animationName = isWalking ? WalkLeftAnimation : isRunning ? RunLeftAnimation : IdleLeftAnimation;
     var facingRight = Mathf.Sign (hDirection) > 0;
     var animationSpeed = isWalking ? WalkAnimationSpeed : isRunning ? RunAnimationSpeed : 1.0f;
@@ -81,7 +83,40 @@ public partial class PlayerView : Node2D
     var speedScale = movementSpeed / animationSpeed;
     Scale = new Vector2 (facingRight ? -8.0f : 8.0f, 8.0f);
     if (_primaryPlayer.CurrentAnimation == animationName && _primaryPlayer.IsPlaying()) return;
+    var previousAnimationName = _primaryPlayer.CurrentAnimation;
+    EventBus.EmitIf (previousAnimationName != "", new PrimaryAnimationEndedEventArgs (previousAnimationName, wasLooping: Tools.IsAnimationLooping (previousAnimationName, _primaryPlayer)));
     _primaryPlayer.Play (animationName, customSpeed: speedScale);
-    Log.Info ("Playing animation {animationName} at {speedScale:F1} speed", animationName, speedScale);
+    // await ToSignal (GetTree(), SceneTree.SignalName.ProcessFrame);
+    var isPlaying = _primaryPlayer.CurrentAnimation == animationName && _primaryPlayer.IsPlaying();
+    GD.Print ("isPlaying: " + isPlaying);
+    if (!isPlaying) return;
+    EventBus.Emit (new PrimaryAnimationStartedEventArgs (animationName, Tools.IsAnimationLooping (animationName, _primaryPlayer)));
+    Log.Info ("Playing animation {animationName} at {speedScale:F1} speed, looping: {isLooping}", animationName, speedScale, Tools.IsAnimationLooping (animationName, _primaryPlayer));
+  }
+
+  private void OnPlayerSpriteHovered (PlayerSprite sprite)
+  {
+    if (!_hoveredSprites.Contains (sprite)) _hoveredSprites.Add (sprite);
+    UpdateSpriteHoverText();
+  }
+
+  private void UpdateSpriteHoverText()
+  {
+    var visibleSprites = _hoveredSprites.Where (s => s.Visible).ToList();
+    var debugTextSprites = visibleSprites.Count > 0 ? visibleSprites : _hoveredSprites;
+
+    if (debugTextSprites.Count == 0)
+    {
+      _ui.SetDebugText ("");
+      return;
+    }
+
+    _ui.SetDebugText ($"Hovered {Strings.ToString (debugTextSprites, f: s => s.ShortName)}");
+  }
+
+  private void OnPlayerSpriteUnhovered (PlayerSprite sprite)
+  {
+    _hoveredSprites.Remove (sprite);
+    UpdateSpriteHoverText();
   }
 }

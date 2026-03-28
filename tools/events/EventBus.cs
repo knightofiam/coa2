@@ -155,6 +155,15 @@ public class EventBus
   public event EventHandler <GameResumedEventArgs>? GameResumedEvent;
   public event EventHandler <GameStartedEventArgs>? GameStartedEvent;
   public event EventHandler <GameOverEventArgs>? GameOverEvent;
+  public event EventHandler <PrimaryAnimationStartedEventArgs>? PrimaryAnimationStartedEvent;
+  public event EventHandler <PrimaryAnimationEndedEventArgs>? PrimaryAnimationEndedEvent;
+
+  // Syntactic sugar for conditional event emission.
+  public static void EmitIf (bool condition, EventBusEventArgs eventArgs)
+  {
+    if (!condition) return;
+    Emit (eventArgs);
+  }
 
   public static void Emit (EventBusEventArgs eventArgs)
   {
@@ -218,6 +227,16 @@ public class EventBus
       case GameOverEventArgs args:
       {
         Instance.GameOverEvent?.Invoke (Instance, args);
+        break;
+      }
+      case PrimaryAnimationStartedEventArgs args:
+      {
+        Instance.PrimaryAnimationStartedEvent?.Invoke (Instance, args);
+        break;
+      }
+      case PrimaryAnimationEndedEventArgs args:
+      {
+        Instance.PrimaryAnimationEndedEvent?.Invoke (Instance, args);
         break;
       }
       default:

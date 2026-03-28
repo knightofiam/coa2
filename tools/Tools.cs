@@ -11,10 +11,10 @@ public static class Tools
 
   public static (Vector2I mapCoords, string terrain) GetTileAt (Vector2 localPosition, TileMapLayer tileMapLayer)
   {
-    Log.Trace ("GetTileAt local position: {localPosition}", localPosition);
+    // Log.Trace ("GetTileAt local position: {localPosition}", localPosition);
     var cellTemp1 = tileMapLayer.LocalToMap (localPosition);
     var cellTemp2 = (new Vector2 (cellTemp1.X, cellTemp1.Y) / tileMapLayer.Scale).Floor();
-    Log.Trace ("cellTemp1 (scaled): {cellTemp1}, cellTemp2: {cellTemp2}", new Vector2 (cellTemp1.X, cellTemp1.Y) / tileMapLayer.Scale, cellTemp2);
+    // Log.Trace ("cellTemp1 (scaled): {cellTemp1}, cellTemp2: {cellTemp2}", new Vector2 (cellTemp1.X, cellTemp1.Y) / tileMapLayer.Scale, cellTemp2);
     var mapCoords = new Vector2I ((int)cellTemp2.X, (int)cellTemp2.Y);
     var tileData = tileMapLayer.GetCellTileData (mapCoords);
 
@@ -27,4 +27,10 @@ public static class Tools
 
     return (mapCoords, terrain);
   }
+
+  public static string GetCurrentAnimationName (AnimationPlayer player) => player.CurrentAnimation;
+  public static bool IsCurrentAnimationLooping (AnimationPlayer player) => GetCurrentAnimation (player)?.LoopMode is not Animation.LoopModeEnum.None;
+  public static bool IsAnimationLooping (string? name, AnimationPlayer player) => GetAnimation (name, player)?.LoopMode is not Animation.LoopModeEnum.None;
+  public static Animation? GetCurrentAnimation (AnimationPlayer player) => GetAnimation (GetCurrentAnimationName (player), player);
+  public static Animation? GetAnimation (string? name, AnimationPlayer player) => string.IsNullOrEmpty (name) ? null : player.GetAnimation (name);
 }

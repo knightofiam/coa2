@@ -37,10 +37,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ui\background\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ui_layers.txt" />
-  </ItemGroup>
 </Project>

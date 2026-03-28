@@ -3110,14 +3110,14 @@ _data = {
 [node name="PlayerView" type="Node2D" unique_id=657816127]
 script = ExtResource("1_sokrh")
 
-[node name="Players" type="Node2D" parent="." unique_id=682456308]
+[node name="AnimationPlayers" type="Node2D" parent="." unique_id=682456308]
 
-[node name="Primary" type="AnimationPlayer" parent="Players" unique_id=2121068328]
+[node name="Primary" type="AnimationPlayer" parent="AnimationPlayers" unique_id=2121068328]
 unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_3a4ab")
 
-[node name="Secondary" type="AnimationPlayer" parent="Players" unique_id=117073962]
+[node name="Secondary" type="AnimationPlayer" parent="AnimationPlayers" unique_id=117073962]
 unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ryc4p")
@@ -3126,227 +3126,225 @@ libraries/ = SubResource("AnimationLibrary_ryc4p")
 unique_name_in_owner = true
 
 [node name="foot-right" type="Sprite2D" parent="Sprites" unique_id=346610198 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("2_njfk1")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
+OppositeSprites = Array[String](["boot-right"])
 
 [node name="boot-right" type="Sprite2D" parent="Sprites" unique_id=809162733 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("3_marfe")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="body" type="Sprite2D" parent="Sprites" unique_id=1708955166 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("4_yon1q")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 
 [node name="foot-left" type="Sprite2D" parent="Sprites" unique_id=499360886 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("5_cymep")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
+OppositeSprites = Array[String](["boot-left"])
 
 [node name="pants" type="Sprite2D" parent="Sprites" unique_id=351601327 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("6_pk7v1")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="boot-left" type="Sprite2D" parent="Sprites" unique_id=558999287 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("7_koe5y")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="shirt" type="Sprite2D" parent="Sprites" unique_id=897536516 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("8_53tbj")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="belt" type="Sprite2D" parent="Sprites" unique_id=236643776 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("9_ajwbs")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="head-outline-rear" type="Sprite2D" parent="Sprites" unique_id=1516782242 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("10_00jqd")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 
 [node name="hat-outline" type="Sprite2D" parent="Sprites" unique_id=1186821421 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("11_w2pjd")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
+DependsOnSprites = Array[String](["hat"])
 
 [node name="backpack" type="Sprite2D" parent="Sprites" unique_id=1157813794 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("12_upjiw")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="backpack-straps" type="Sprite2D" parent="Sprites" unique_id=254342550 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("13_inxq0")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
+DependsOnSprites = Array[String](["backpack"])
 
 [node name="head" type="Sprite2D" parent="Sprites" unique_id=519068243 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("14_xg38c")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 
 [node name="hair" type="Sprite2D" parent="Sprites" unique_id=1043221463 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 z_index = 1
 texture = ExtResource("15_tyeqh")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
+OppositeSprites = Array[String](["hat"])
 
 [node name="hat" type="Sprite2D" parent="Sprites" unique_id=400413869 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("16_kjh47")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="item-in-backpack" type="Sprite2D" parent="Sprites" unique_id=83621455 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 position = Vector2(-0.125, 0)
 texture = ExtResource("17_ua14l")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="scarf" type="Sprite2D" parent="Sprites" unique_id=1938008641 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("18_4mnbq")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="hand-right" type="Sprite2D" parent="Sprites" unique_id=1694456110 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("19_1j2nl")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
+OppositeSprites = Array[String](["glove-right"])
 
 [node name="glove-right" type="Sprite2D" parent="Sprites" unique_id=617136136 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("21_marfe")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="item-in-hand" type="Sprite2D" parent="Sprites" unique_id=215425442 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 position = Vector2(1, 3)
 rotation = -0.34906584
 texture = ExtResource("20_j1frr")
 hframes = 42
-frame = 7
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="item-equipping" type="Sprite2D" parent="Sprites" unique_id=1047295694 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 z_index = 1
 texture = ExtResource("20_j1frr")
 hframes = 42
 frame = 7
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="arm-left" type="Sprite2D" parent="Sprites" unique_id=2089021620 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("21_x4fam")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
+OppositeSprites = Array[String](["shirt-sleeve-left"])
 
 [node name="shirt-sleeve-left" type="Sprite2D" parent="Sprites" unique_id=1178893571 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 z_index = 2
 texture = ExtResource("22_vn5ms")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
+DependsOnSprites = Array[String](["shirt"])
 
 [node name="hand-left" type="Sprite2D" parent="Sprites" unique_id=80605535 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 z_index = 1
 texture = ExtResource("23_lgom6")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
+OppositeSprites = Array[String](["glove-left"])
 
 [node name="glove-left" type="Sprite2D" parent="Sprites" unique_id=1861703016 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("24_hri7c")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
 
 [node name="arm-right" type="Sprite2D" parent="Sprites" unique_id=2061615715 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
-visible = false
 texture = ExtResource("25_1o5qt")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
+OppositeSprites = Array[String](["shirt-sleeve-right"])
 
 [node name="shirt-sleeve-right" type="Sprite2D" parent="Sprites" unique_id=175873677 node_paths=PackedStringArray("PrimaryAnimationPlayer")]
 texture = ExtResource("26_fpu4g")
 hframes = 42
-frame = 2
+frame = 29
 script = ExtResource("16_njfk1")
-PrimaryAnimationPlayer = NodePath("../../Players/Primary")
+PrimaryAnimationPlayer = NodePath("../../AnimationPlayers/Primary")
 Equipable = true
+DependsOnSprites = Array[String](["shirt"])
